@@ -1,4 +1,6 @@
-import Home from "./telas/home"
+import TelaHome from "./telas/home"
+import TelaLogin from "./telas/login"
+import TelaPedido from "./telas/pedido"
 import {
     BrowserRouter as Router,
     Routes,
@@ -10,12 +12,13 @@ const AppRouter = () => {
       <>
         <Router>
             <Routes>
-                <Route path="/" element={<Home/>}></Route>
-                <Route path="/login"></Route>
+                <Route path="/" element={<TelaHome/>}></Route>
+                <Route path="/login" element={<TelaLogin/>}></Route>
+                <Route path="/pedido" element={<TelaPedido/>}></Route>
             </Routes>
         </Router>
       </>
     );
   }
   
-  export default AppRouter;
+export default AppRouter;

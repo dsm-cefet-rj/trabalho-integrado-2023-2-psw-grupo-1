@@ -1,9 +1,9 @@
-const Home = () => {
+const TelaHome = () => {
   return (
     <>
-    <h1>Home</h1>
+      <h1>Tela Home</h1>
     </>
   );
 }
 
-export default Home;
+export default TelaHome;
