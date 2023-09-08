@@ -1,0 +1,32 @@
+.textoCentralizado {
+  text-align: center;
+  margin-top: 10px;
+}
+
+.textoCentralizado2 {
+  text-align: center;
+  margin-top: 50px;
+}
+
+.retanguloRedondo {
+  width: 400px;
+  /*largura*/
+  height: 300px;
+  /* altura*/
+  background-color: #b0b0b0;
+  border-radius: 20px;
+  color: #000000;
+  text-align: center;
+  line-height: 40px;
+  margin: 0 auto;
+}
+
+.retanguloContato {
+      margin-bottom: 10px;
+    }
+
+.footer {
+      position: fixed;
+      width: 100%;
+      bottom: 0;
+    }
