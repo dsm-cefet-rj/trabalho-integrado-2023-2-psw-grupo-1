@@ -1,7 +1,19 @@
+import { useState } from "react";
+import Produtos from "../dados/produto";
+
 const TelaHome = () => {
+
   return (
     <>
-      <h1>Tela Home</h1>
+      { Produtos.map(p => {
+        return (
+        <div>
+          <img src="" alt="Foto Pizza" />
+          <h2>{p.nome}</h2>
+          <p>Valor: {p.valor}</p>
+        </div>
+        )
+      }) }
     </>
   );
 }

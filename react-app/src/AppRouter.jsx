@@ -1,3 +1,4 @@
+import TelaCadastroProduto from "./telas/cadastroProduto";
 import TelaHome from "./telas/home"
 import TelaLogin from "./telas/login"
 import TelaPedido from "./telas/pedido"
@@ -15,6 +16,7 @@ const AppRouter = () => {
                 <Route path="/" element={<TelaHome/>}></Route>
                 <Route path="/login" element={<TelaLogin/>}></Route>
                 <Route path="/pedido" element={<TelaPedido/>}></Route>
+                <Route path="/cadastroProduto" element={<TelaCadastroProduto/>}></Route>
             </Routes>
         </Router>
       </>
