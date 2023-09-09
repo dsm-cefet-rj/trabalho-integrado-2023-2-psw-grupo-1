@@ -3,22 +3,32 @@
     {
       "nome": "Calabresa",
       "valor": 50,
+      "imagem": "../imagens/pizza-portuguesa.jpg",
       "id": 1
     },
     {
       "nome": "Frango c/ Catupiry",
+      "imagem": "../imagens/pizza-portuguesa.jpg",
       "valor": 60,
       "id": 2
     },
     {
       "nome": "Peperoni",
+      "imagem": "../imagens/pizza-portuguesa.jpg",
       "valor": "40",
       "id": 3
     },
     {
       "nome": "Peperoni",
+      "imagem": "../imagens/pizza-portuguesa.jpg",
       "valor": "40",
       "id": 4
+    },
+    {
+      "nome": "Mussarela",
+      "imagem": "../imagens/pizza-portuguesa.jpg",
+      "valor": "45",
+      "id": 5
     }
   ]
 }
