@@ -30,5 +30,14 @@
       "valor": "45",
       "id": 5
     }
-  ]
+  ],
+  
+  "Carrinho":
+    {
+      "produtos": [
+        1
+      ],
+      "quantidade": 1,
+      "valorTotal": 50
+    }
 }
