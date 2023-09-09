@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 
 const TelaCadastroProduto = () => {
     const [produtoForm, setProdutoForm] = useState(null)
@@ -9,10 +9,6 @@ const TelaCadastroProduto = () => {
          "nome": e.target.nome.value,
          "valor": e.target.valor.value
        }
-
-       console.log(dado)
-       console.log(JSON.stringify(dado))
-    
        fetch('http://localhost:8000/produtos', {
          "method": "POST",
          "body": JSON.stringify(dado),
@@ -26,25 +22,15 @@ const TelaCadastroProduto = () => {
       setProdutoForm({[e.target.name]: [e.target.value]})
       console.log(produtoForm)
     }
-
-    //useEffect(() => {
-    //  fetch('http://localhost:8000/produtos', {
-    //    "method": "GET",
-    //    "headers": {"Content-type": "application/json;charset=UTF-8"}
-    //  })
-    //  .then(response => response.json())
-    //  .then(dado => setProdutosApi(dado))
-    //}, [])
-
     return (
       <>
         <div>
             <h2>Cadastro de produto</h2>
             <form onSubmit={handleOnSubmit}>
                 <label>Nome</label>
-                <input type="text" name="nome" id="nome" onChange={handleInputChange}/>
+                <input type="text" name="nome" id="nome" onChange={handleInputChange} required/>
                 <label>Valor</label>
-                <input type="number" name="Valor" id="valor" onChange={handleInputChange}/>
+                <input type="number" name="Valor" id="valor" onChange={handleInputChange} required/>
                 <input type="submit" value="Submit" />
             </form>
         </div>
