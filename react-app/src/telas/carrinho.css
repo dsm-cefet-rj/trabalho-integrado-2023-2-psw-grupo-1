@@ -1,0 +1,34 @@
+.carrinho-container {
+    margin: 0 auto;
+    width: 300px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.produto-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    width: 250px;
+}
+
+.produto-info {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+}
+
+.imagem-produto {
+    max-width: 200px;
+}
+
+.imagem-produto img {
+    height: 100px;
+}
+
+.lixeira {
+    cursor: pointer;
+}

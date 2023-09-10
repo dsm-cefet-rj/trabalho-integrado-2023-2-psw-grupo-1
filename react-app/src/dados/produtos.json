@@ -51,10 +51,22 @@
           "imagem": "../imagens/pizza-portuguesa.jpg",
           "valor": 60,
           "id": 2
+        },
+        {
+          "nome": "Mussarela",
+          "imagem": "../imagens/pizza-portuguesa.jpg",
+          "valor": "45",
+          "id": 5
+        },
+        {
+          "nome": "Mussarela",
+          "imagem": "../imagens/pizza-portuguesa.jpg",
+          "valor": "45",
+          "id": 5
         }
       ],
-      "valorTotal": 160,
-      "quantidade": 3,
+      "valorTotal": 250,
+      "quantidade": 5,
       "id": 1
     }
   ]
