@@ -31,13 +31,31 @@
       "id": 5
     }
   ],
-  
-  "Carrinho":
+  "Carrinho": [
     {
       "produtos": [
-        1
+        {
+          "nome": "Calabresa",
+          "valor": 50,
+          "imagem": "../imagens/pizza-portuguesa.jpg",
+          "id": 1
+        },
+        {
+          "nome": "Calabresa",
+          "valor": 50,
+          "imagem": "../imagens/pizza-portuguesa.jpg",
+          "id": 1
+        },
+        {
+          "nome": "Frango c/ Catupiry",
+          "imagem": "../imagens/pizza-portuguesa.jpg",
+          "valor": 60,
+          "id": 2
+        }
       ],
-      "quantidade": 1,
-      "valorTotal": 50
+      "valorTotal": 160,
+      "quantidade": 3,
+      "id": 1
     }
+  ]
 }

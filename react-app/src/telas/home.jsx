@@ -7,28 +7,38 @@ const TelaHome = () => {
   
   const handleClickProduto = (event) => {
     let produtoId = parseInt(event.currentTarget.id);
-    let valorPizza = produtos.filter(p => p.id === produtoId)[0].valor
 
-    let novoValorTotal = carrinho.valorTotal + valorPizza;
-    let novosProdutos = carrinho.produtos.push(produtoId)
-    let novaQuantidade = carrinho.quantidade + 1;
+    let produtoAtual = produtos.filter(p => p.id === produtoId)[0]
+
+    let valorPizza = produtoAtual.valor
+
+    let novoProdutosCarrinho = [...carrinho.produtos, produtoAtual]
+    let novoValor = parseInt(carrinho.valorTotal) + parseInt(valorPizza)
+    let novaQuantidade = carrinho.quantidade + 1
 
     setCarrinho({
-      "produtos": novosProdutos,
-      "valorTotal": novoValorTotal,
-      "quantidade": novaQuantidade
+      "produtos": novoProdutosCarrinho,
+      "valorTotal": novoValor,
+      "quantidade": novaQuantidade,
+      "id": carrinho.id
     })
+
+    fetch('http://localhost:8000/carrinho/1', {
+         "method": "PUT",
+         "body": JSON.stringify(carrinho),
+         "headers": {"Content-type": "application/json;charset=UTF-8"}
+       })
 
     console.log(carrinho)
   }
 
     useEffect(() => {
-      console.log("aaaaaaaaaaa")
       fetch('http://localhost:8000/produtos')
        .then(response => response.json())
        .then(json => setProdutos(json))
-
-       fetch('http://localhost:8000/carrinho')
+       
+       //Mais pra frente aqui ao invés de chamar 1 direto ele vai chamar o id do usuário
+       fetch('http://localhost:8000/carrinho/1')
        .then(response => response.json())
        .then(json => setCarrinho(json))
      }, [])
