@@ -12,7 +12,6 @@ const TelaCarrinho = () => {
       let valorProduto = produtoCarrinhoExcluir.valor
 
       let novoProdutosCarrinho = carrinho.produtos.filter(p => p.idProdutoCarrinho !== event.currentTarget.id)
-
       let dado = {
         "produtos": novoProdutosCarrinho,
         "valorTotal": carrinho.valorTotal - valorProduto,
@@ -20,14 +19,14 @@ const TelaCarrinho = () => {
         "id": carrinho.id
       }
 
+      setCarrinho(dado)
+
+      console.log(dado)
       fetch('http://localhost:8000/carrinho/1', {
          "method": "PUT",
          "body": JSON.stringify(dado),
          "headers": {"Content-type": "application/json;charset=UTF-8"}
        })
-
-       setCarrinho(dado)
-
     }
 
     useEffect(() => {
@@ -54,6 +53,8 @@ const TelaCarrinho = () => {
             )
            })}
         </div>
+        <div>Valor Total: {carrinho && carrinho.valorTotal}</div>
+        <div>Quantidade: {carrinho && carrinho.quantidade}</div>
       </>
     );
   }
