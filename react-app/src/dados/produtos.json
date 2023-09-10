@@ -33,40 +33,9 @@
   ],
   "Carrinho": [
     {
-      "produtos": [
-        {
-          "nome": "Calabresa",
-          "valor": 50,
-          "imagem": "../imagens/pizza-portuguesa.jpg",
-          "id": 1
-        },
-        {
-          "nome": "Calabresa",
-          "valor": 50,
-          "imagem": "../imagens/pizza-portuguesa.jpg",
-          "id": 1
-        },
-        {
-          "nome": "Frango c/ Catupiry",
-          "imagem": "../imagens/pizza-portuguesa.jpg",
-          "valor": 60,
-          "id": 2
-        },
-        {
-          "nome": "Mussarela",
-          "imagem": "../imagens/pizza-portuguesa.jpg",
-          "valor": "45",
-          "id": 5
-        },
-        {
-          "nome": "Mussarela",
-          "imagem": "../imagens/pizza-portuguesa.jpg",
-          "valor": "45",
-          "id": 5
-        }
-      ],
-      "valorTotal": 250,
-      "quantidade": 5,
+      "produtos": [],
+      "valorTotal": 0,
+      "quantidade": 0,
       "id": 1
     }
   ]

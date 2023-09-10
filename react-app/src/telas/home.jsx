@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react"
+import uniqueId from 'lodash/uniqueId';
 import "./home.css"
 
 const TelaHome = () => {
@@ -9,30 +10,37 @@ const TelaHome = () => {
     let produtoId = parseInt(event.currentTarget.id);
 
     let produtoAtual = produtos.filter(p => p.id === produtoId)[0]
+    produtoAtual.idProdutoCarrinho = uniqueId()
 
     let valorPizza = produtoAtual.valor
 
-    let novoProdutosCarrinho = [...carrinho.produtos, produtoAtual]
-    let novoValor = parseInt(carrinho.valorTotal) + parseInt(valorPizza)
-    let novaQuantidade = carrinho.quantidade + 1
+    let novoProdutosCarrinho = carrinho.produtos != null ? [...carrinho.produtos, produtoAtual] : [produtoAtual]
+    let novoValor = carrinho.valorTotal != null ? parseInt(carrinho.valorTotal) + parseInt(valorPizza) : valorPizza
+    let novaQuantidade = carrinho.quantidade != null ? carrinho.quantidade + 1 : 1
 
-    setCarrinho({
+    let novoCarrinho = {
       "produtos": novoProdutosCarrinho,
       "valorTotal": novoValor,
       "quantidade": novaQuantidade,
-      "id": carrinho.id
-    })
+      "id": carrinho.id != null ? carrinho.id : 1
+    }
 
+    setCarrinho(novoCarrinho)
+
+    //O carrinho do usuário vai passar a existir no momento do login, nesse momento se tem como premissa que o carrinho já existe
     fetch('http://localhost:8000/carrinho/1', {
          "method": "PUT",
-         "body": JSON.stringify(carrinho),
+         "body": JSON.stringify(novoCarrinho),
          "headers": {"Content-type": "application/json;charset=UTF-8"}
        })
+
+    alert("Produto adicionado ao carrinho")
 
     console.log(carrinho)
   }
 
     useEffect(() => {
+      console.log("a")
       fetch('http://localhost:8000/produtos')
        .then(response => response.json())
        .then(json => setProdutos(json))
