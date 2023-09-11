@@ -9,7 +9,7 @@ const TelaCarrinho = () => {
     }
 
     const handleClickLixeira = (event) => {
-      console.log(event.currentTarget.id) //Esse id recebe o idProdutoCarrinho. 
+      console.log(event.currentTarget.id) //Esse Id recebe o idProdutoCarrinho.
       
       let produtoCarrinhoExcluir = carrinho.produtos.filter(p => p.idProdutoCarrinho === event.currentTarget.id)[0]
 
