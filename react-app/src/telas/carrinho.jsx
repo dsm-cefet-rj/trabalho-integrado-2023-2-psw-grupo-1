@@ -4,10 +4,14 @@ import "./carrinho.css"
 const TelaCarrinho = () => {
     const [carrinho, setCarrinho] = useState(null)
 
+    const handleButtonClick = () => {
+      window.location.replace('http://localhost:3000/pagamento');
+    }
+
     const handleClickLixeira = (event) => {
       console.log(event.currentTarget.id) //esse id recebe o idProdutoCarrinho
       
-      let produtoCarrinhoExcluir = carrinho.produtos.filter(p => p.idProdutoCarrinho == event.currentTarget.id)[0]
+      let produtoCarrinhoExcluir = carrinho.produtos.filter(p => p.idProdutoCarrinho === event.currentTarget.id)[0]
 
       let valorProduto = produtoCarrinhoExcluir.valor
 
@@ -55,6 +59,7 @@ const TelaCarrinho = () => {
         </div>
         <div>Valor Total: {carrinho && carrinho.valorTotal}</div>
         <div>Quantidade: {carrinho && carrinho.quantidade}</div>
+        <button type="button" onClick={handleButtonClick}>Ir Para Pagamento</button>
       </>
     );
   }
