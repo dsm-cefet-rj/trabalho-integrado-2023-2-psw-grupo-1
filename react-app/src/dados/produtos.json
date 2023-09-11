@@ -32,42 +32,9 @@
     }
   ],
   "Carrinho": [
-    {
-      "produtos": [
-        {
-          "nome": "Calabresa",
-          "valor": 50,
-          "imagem": "../imagens/pizza-portuguesa.jpg",
-          "id": 1,
-          "idProdutoCarrinho": "1"
-        },
-        {
-          "nome": "Frango c/ Catupiry",
-          "imagem": "../imagens/pizza-portuguesa.jpg",
-          "valor": 60,
-          "id": 2,
-          "idProdutoCarrinho": "1"
-        }
-      ],
-      "valorTotal": 110,
-      "quantidade": 2,
-      "id": 1
-    }
   ],
   "Pagamento": [
-    {
-      "idCarrinho": 1,
-      "valorPagamento": 110,
-      "formaPagamento": "Debito",
-      "id": 1
-    }
   ],
   "Pedido": [
-    {
-      "idCarrinho": 1,
-      "idPagamento": 1,
-      "endereco": "Encantado",
-      "id": 1
-    }
   ]
 }

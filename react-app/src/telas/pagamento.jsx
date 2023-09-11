@@ -42,6 +42,7 @@ const TelaPagamento = () => {
           "body": JSON.stringify(dadoPedido),
           "headers": {"Content-type": "application/json;charset=UTF-8"}
         })
+        window.location.replace('http://localhost:3000/pedido');
       }
     }, [pagamento])
 
