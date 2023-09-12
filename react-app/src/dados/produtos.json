@@ -33,26 +33,12 @@
   ],
   "Carrinho": [
     {
-      "produtos": [
-        {
-          "nome": "Frango c/ Catupiry",
-          "imagem": "../imagens/pizza-portuguesa.jpg",
-          "valor": 60,
-          "id": 2,
-          "idProdutoCarrinho": "1"
-        }
-      ],
-      "valorTotal": 60,
-      "quantidade": 1,
+      "produtos": [],
+      "valorTotal": 0,
+      "quantidade": 0,
       "id": 1
     }
   ],
-  "Pagamento": [
-    {
-      "idCarrinho": 1,
-      "valorPagamento": 60,
-      "formaPagamento": "Debito",
-      "id": 1
-    }  
+  "Pagamento": [  
   ]
 }
