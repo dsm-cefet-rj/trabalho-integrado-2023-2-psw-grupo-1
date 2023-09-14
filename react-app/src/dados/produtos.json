@@ -33,38 +33,9 @@
   ],
   "Carrinho": [
     {
-      "produtos": [
-        {
-          "nome": "Frango c/ Catupiry",
-          "imagem": "../imagens/pizza-portuguesa.jpg",
-          "valor": 60,
-          "id": 2,
-          "idProdutoCarrinho": "1"
-        },
-        {
-          "nome": "Mussarela",
-          "imagem": "../imagens/pizza-portuguesa.jpg",
-          "valor": "45",
-          "id": 5,
-          "idProdutoCarrinho": "1"
-        },
-        {
-          "nome": "Frango c/ Catupiry",
-          "imagem": "../imagens/pizza-portuguesa.jpg",
-          "valor": 60,
-          "id": 2,
-          "idProdutoCarrinho": "1"
-        },
-        {
-          "nome": "Calabresa",
-          "valor": 50,
-          "imagem": "../imagens/pizza-portuguesa.jpg",
-          "id": 1,
-          "idProdutoCarrinho": "2"
-        }
-      ],
-      "valorTotal": 215,
-      "quantidade": 4,
+      "produtos": [],
+      "valorTotal": 420,
+      "quantidade": 9,
       "id": 1
     }
   ],
@@ -74,6 +45,18 @@
       "valorPagamento": 60,
       "formaPagamento": "Pix",
       "id": 1
+    },
+    {
+      "idCarrinho": 1,
+      "valorPagamento": 205,
+      "formaPagamento": "Vale Alimentação",
+      "id": 2
+    },
+    {
+      "idCarrinho": 1,
+      "valorPagamento": 335,
+      "formaPagamento": "Credito",
+      "id": 3
     }
   ]
 }

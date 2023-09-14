@@ -15,8 +15,8 @@ const AppRouter = () => {
       <>
         <Router>
             <Routes>
-                <Route path="/" element={<TelaHome/>}></Route>
-                <Route path="/login" element={<TelaLogin/>}></Route>
+                <Route path="/cardapio" element={<TelaHome/>}></Route>
+                <Route path="/" element={<TelaLogin/>}></Route>
                 <Route path="/pedido" element={<TelaPedido/>}></Route>
                 <Route path="/cadastroProduto" element={<TelaCadastroProduto/>}></Route>
                 <Route path="/carrinho" element={<TelaCarrinho/>}></Route>

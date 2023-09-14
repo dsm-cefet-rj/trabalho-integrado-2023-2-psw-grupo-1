@@ -57,10 +57,14 @@ const TelaCarrinho = () => {
                 </div>
             )
            })}
+          {/* Div para exibir o Valor Total */}
+             <div className="valor-total">Valor Total: R${carrinho && carrinho.valorTotal.toFixed(2)}</div>
+             <div className="quantidade">Quantidade: {carrinho && carrinho.quantidade}</div>
+          {/* Botão "Ir Para Pagamento" */}
+              <button type="button" onClick={handleButtonClick}>
+            Ir Para Pagamento
+          </button>
         </div>
-        <div>Valor Total: {carrinho && carrinho.valorTotal}</div>
-        <div>Quantidade: {carrinho && carrinho.quantidade}</div>
-        <button type="button" onClick={handleButtonClick}>Ir Para Pagamento</button>
       </>
     );
   }

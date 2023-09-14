@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import "./TelaPagamento.css"; // Importe o arquivo CSS
+import "./pagamento.css"; 
 
 const TelaPagamento = () => {
   const [carrinho, setCarrinho] = useState(null);
