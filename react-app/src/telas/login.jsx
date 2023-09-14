@@ -9,48 +9,43 @@ const TelaLogin = () => {
   const [error, setError] = useState('');
 
   const handleLogin = () => {
-    // Verifique se o nome de usuário e senha correspondem aos valores esperados
     if (username === 'jose' && password === '1234') {
-      // Se o login for bem-sucedido, redirecione para a página de cardápio
       navigate('/cardapio');
     } else {
-      // Se o login falhar, exiba uma mensagem de erro
       setError('Nome de usuário ou senha incorretos');
     }
   }
 
   return (
-    <div className="login-container">
-      <div className="login-form">
-        <h2>Faça Login</h2>
+    <body className="body">
+      <div className="div">
+      <h1 className="header-login">Faça Login</h1>
         <form onSubmit={handleLogin}>
-          <div className="form-group">
-            <label htmlFor="username">Usuário:</label>
-            <input
-              type="text"
-              id="username"
-              name="username"
-              placeholder="Nome de Usuário"
-              value={username}
-              onChange={(e) => setUsername(e.target.value)}
-            />
-          </div>
-          <div className="form-group">
-            <label htmlFor="password">Senha:</label>
-            <input
-              type="password"
-              id="password"
-              name="password"
-              placeholder="Senha"
-              value={password}
-              onChange={(e) => setPassword(e.target.value)}
-            />
-          </div>
-          <button type="submit">Entrar</button>
+          <label htmlFor="username" className="label">Usuário:</label>
+          <input
+            type="text"
+            id="username"
+            name="username"
+            placeholder="Nome de Usuário"
+            value={username}
+            onChange={(e) => setUsername(e.target.value)}
+            className="input"
+          />
+          <label htmlFor="password" className="label">Senha:</label>
+          <input
+            type="password"
+            id="password"
+            name="password"
+            placeholder="Senha"
+            value={password}
+            onChange={(e) => setPassword(e.target.value)}
+            className="input"
+          />
+          <button type="submit" className="button">Entrar</button>
           {error && <p>{error}</p>}
         </form>
       </div>
-    </div>
+    </body>
   );
 }
 

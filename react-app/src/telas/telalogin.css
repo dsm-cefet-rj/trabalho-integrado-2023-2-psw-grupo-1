@@ -1,66 +1,42 @@
 .body {
-    font-family: Arial, sans-serif;
+    font-family: Arial, Helvetica, sans-serif;
     background-color: #ff3700f3;
-    margin: 0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-}
-.header {
-    background-color: #000000; 
-    color: #fff; 
-    padding: 10px 0;
-    text-align: center;
-    position: fixed;
-    top: 0; 
-    width: 100%; 
-    z-index: 1000; 
 }
 
-.header h1 {
-    margin: 0;
-    font-size: 30px;
-}
-.login-container {
-    background-color: #ffffff;
-    width: 400px;
+.div {
+    background-color: rgba(70, 67, 67, 0.9);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    padding: 70px;
     border-radius: 15px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    color: #fff;
+    width: 200px;
+}
+
+.header-login {
+    color: #ffffff; 
     text-align: center;
+    margin-bottom: 20px;
+  }
+  
+.input {
+    padding: 10px;
+    border: 1px solid #ffffff;
+    border-radius: 3px;
+    outline: none;
+    font-size: 13px;
+    color:white;
 }
-
-.header h1 {
-    margin: 0;
-    font-size: 24px;
-}
-
-.login-form {
-    padding: 50px;
-    margin: 2px 0;
-}
-
-.form-group {
-    margin-bottom: 15px;
-}
-
-label {
+.label{
+    color:white;
+    font-size: 12px;
     display: block;
     text-align: left;
 }
 
-input[type="text"],
-input[type="password"] {
-    width: 100%;
-    padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 3px;
-    margin: 5px 0; 
-    margin-left: 0; 
-    
-}
-
-button {
+.button {
     background-color: #FF0000;
     color: #fff;
     padding: 10px 15px;
@@ -69,8 +45,9 @@ button {
     cursor: pointer;
     font-size: 16px;
     transition: background-color 0.3s ease;
+    transform: translate(80%,50%);
 }
 
-button:hover {
+.button:hover {
     background-color: #ff0000;
 }
