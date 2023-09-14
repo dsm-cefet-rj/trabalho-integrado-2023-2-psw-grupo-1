@@ -10,7 +10,7 @@ function App(props) {
       <AppRouter/>
       <footer>
         <nav>
-          <a href="/">Cardapio</a>
+          <a href="/cardapio">Cardapio</a>
           <a href="/carrinho">Carrinho</a>
           <a href="/pedido">Pedido</a>
         </nav>
