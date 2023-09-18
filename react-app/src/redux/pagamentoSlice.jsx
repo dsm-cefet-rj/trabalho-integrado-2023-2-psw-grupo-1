@@ -1,4 +1,5 @@
 import { createSlice } from "@reduxjs/toolkit";
+import uniqueId from "lodash.uniqueid";
 
 export const pagamentoSlice = createSlice({
     name: "pagamento",
@@ -10,10 +11,12 @@ export const pagamentoSlice = createSlice({
     },
     reducers:{
         changePagamento(state, { payload }) {
-            console.log("pay a")
-            console.log(payload)
-            console.log(state)
-            return { ...state, payload }
+            return { 
+                "idCarrinho": payload.idCarrinho,
+                "valorPagamento": payload.valorPagamento,
+                "formaPagamento": payload.formaPagamento,
+                "id": parseInt(uniqueId())
+            }
         }
     }
 })
