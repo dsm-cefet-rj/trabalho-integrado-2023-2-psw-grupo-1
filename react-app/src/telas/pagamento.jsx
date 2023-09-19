@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import "./TelaPagamento.css"; // Importe o arquivo CSS
+import "./pagamento.css"; // Importe o arquivo CSS
 import { useDispatch, useSelector } from "react-redux"
 import { changePagamento } from "../redux/pagamentoSlice";
 import { useNavigate } from "react-router-dom";
