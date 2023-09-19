@@ -1,17 +1,23 @@
 import { useEffect, useState } from "react";
-import "./TelaPagamento.css"; // Importe o arquivo CSS
+import "./pagamento.css"; // Importe o arquivo CSS
+import { useDispatch, useSelector } from "react-redux"
+import { changePagamento } from "../redux/pagamentoSlice";
+import { useNavigate } from "react-router-dom";
 
 const TelaPagamento = () => {
   const [carrinho, setCarrinho] = useState(null);
   const [pagamento, setPagamento] = useState(null);
   const [endereco, setEndereco] = useState(null);
   const [formaPagamento, setFormaPagamento] = useState(""); // Estado para a forma de pagamento selecionada
+  const carrinho2 = useSelector(state => state.carrinho)
+  const navigate = useNavigate()
+  const dispatch = useDispatch()
 
   const handleOnSubmit = (event) => {
     event.preventDefault();
 
-    let idCarrinho = carrinho.id;
-    let valorPagamento = carrinho.valorTotal;
+    let idCarrinho = carrinho2.id;
+    let valorPagamento = carrinho2.valorTotal;
 
     setEndereco(event.target.endereco.value);
 
@@ -21,6 +27,8 @@ const TelaPagamento = () => {
       formaPagamento: formaPagamento, // Usar o estado formaPagamento
     };
 
+    dispatch(changePagamento(dadoPagamento))
+
     fetch("http://localhost:8000/pagamento", {
       method: "POST",
       body: JSON.stringify(dadoPagamento),
@@ -28,6 +36,8 @@ const TelaPagamento = () => {
     })
       .then((response) => response.json())
       .then((json) => setPagamento(json));
+
+      navigate("../pedido")
   };
 
   useEffect(() => {
@@ -43,7 +53,7 @@ const TelaPagamento = () => {
         body: JSON.stringify(dadoPedido),
         headers: { "Content-type": "application/json;charset=UTF-8" },
       });
-      window.location.replace("http://localhost:3000/pedido");
+      //window.location.replace("http://localhost:3000/pedido");
     }
   }, [pagamento]);
 
@@ -65,11 +75,11 @@ const TelaPagamento = () => {
           <form onSubmit={handleOnSubmit}>
             <div className="item">
               <label>Valor Total:</label>
-              {carrinho && <span>R$ {carrinho.valorTotal.toFixed(2)}</span>}
+              {carrinho2 && <span>R$ {carrinho2.valorTotal.toFixed(2)}</span>}
             </div>
             <div className="item">
               <label>Quantidade do Pedido:</label>
-              {carrinho && carrinho.quantidade}
+              {carrinho2 && carrinho2.quantidade}
             </div>
             <div className="item">
               <label>Endereço:</label>

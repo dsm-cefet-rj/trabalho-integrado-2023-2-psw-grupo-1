@@ -1,7 +1,10 @@
 import './App.css';
 import AppRouter from './AppRouter';
+import { useNavigate } from 'react-router-dom';
 
-function App(props) {
+function App() {
+  const navigate = useNavigate()
+
   return (
     <>
       <header>
@@ -10,9 +13,9 @@ function App(props) {
       <AppRouter/>
       <footer>
         <nav>
-          <a href="/cardapio">Cardapio</a>
-          <a href="/carrinho">Carrinho</a>
-          <a href="/pedido">Pedido</a>
+          <a onClick={() => navigate("/cardapio")}>Cardapio</a>
+          <a onClick={() => navigate("/carrinho")}>Carrinho</a>
+          <a onClick={() => navigate("pedido")}>Pedido</a>
         </nav>
       </footer>
     </>

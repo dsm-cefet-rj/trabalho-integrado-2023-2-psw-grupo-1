@@ -1,6 +1,6 @@
-## Comandos para execução do projeto
+## Comandos para execução do projeto na pasta /react-app
 
-### Baixar e instalar pacotes:
+### Instalar pacotes:
 #### yarn
 
 ### Execução da aplicação: 
