@@ -1,5 +1,13 @@
 import "./pedido.css"
+import { useSelector } from "react-redux"
+
 const TelaPedido = () => {
+    const pagamento = useSelector(state => state.pagamento)
+
+    const handleClick = () => {
+        console.log(pagamento)
+    }
+
     return (
       <>
             <div>
@@ -18,6 +26,7 @@ const TelaPedido = () => {
                 <div class="retanguloRedondo retanguloContato" style={{ height: 40}}>
                     <p class="textoCentralizado2">Número de Contato: 99999-9999</p>
                 </div>
+                <button onClick={handleClick}>aaa</button>
             </div>
       </>
     );

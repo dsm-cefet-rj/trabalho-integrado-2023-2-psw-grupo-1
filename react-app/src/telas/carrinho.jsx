@@ -1,49 +1,43 @@
-import { useEffect, useState } from "react";
 import "./carrinho.css"
+import { useDispatch, useSelector } from "react-redux"
+import { deleteProdutoCarrinho } from "../redux/carrinhoSlice"
+import { useNavigate } from "react-router-dom"
 
 const TelaCarrinho = () => {
-    const [carrinho, setCarrinho] = useState(null)
+    const carrinhoSelector = useSelector(state => state.carrinho)
+    const navigate = useNavigate()
+    const dispatch = useDispatch()
 
     const handleButtonClick = () => {
-      window.location.replace('http://localhost:3000/pagamento');
+      navigate('../pagamento');
     }
 
     const handleClickLixeira = (event) => {
       
       console.log(event.currentTarget.id) //Esse ID recebe o idProdutoCarrinho. 
 
-      let produtoCarrinhoExcluir = carrinho.produtos.filter(p => p.idProdutoCarrinho === event.currentTarget.id)[0]
+      let produtoCarrinhoExcluir = carrinhoSelector.produtos.filter(p => p.idProdutoCarrinho == event.currentTarget.id)[0]
 
       let valorProduto = produtoCarrinhoExcluir.valor
 
-      let novoProdutosCarrinho = carrinho.produtos.filter(p => p.idProdutoCarrinho !== event.currentTarget.id)
       let dado = {
-        "produtos": novoProdutosCarrinho,
-        "valorTotal": carrinho.valorTotal - valorProduto,
-        "quantidade": carrinho.quantidade - 1,
-        "id": carrinho.id
+        "idProdutoCarrinho": event.currentTarget.id,
+        "valorTotal": valorProduto
       }
 
-      setCarrinho(dado)
+       dispatch(deleteProdutoCarrinho(dado))
 
-      console.log(dado)
-      fetch('http://localhost:8000/carrinho/1', {
-         "method": "PUT",
-         "body": JSON.stringify(dado),
-         "headers": {"Content-type": "application/json;charset=UTF-8"}
-       })
+      // fetch('http://localhost:8000/carrinho/1', {
+      //    "method": "PUT",
+      //    "body": JSON.stringify(carrinhoSelector),
+      //    "headers": {"Content-type": "application/json;charset=UTF-8"}
+      //  })
     }
-
-    useEffect(() => {
-        fetch('http://localhost:8000/carrinho/1')
-       .then(response => response.json())
-       .then(json => setCarrinho(json))
-    }, [])
 
     return (
       <>
         <div className="carrinho-container">
-           {carrinho && carrinho.produtos.map(p => {
+           {carrinhoSelector && carrinhoSelector.produtos.map(p => {
             return ( 
                 <div key={p.idProdutoCarrinho} className="produto-container">
                     <div className="imagem-produto">
@@ -65,6 +59,9 @@ const TelaCarrinho = () => {
             Ir Para Pagamento
           </button>
         </div>
+        <div>Valor Total: {carrinho && carrinho.valorTotal}</div>
+        <div>Quantidade: {carrinho && carrinho.quantidade}</div>
+        <button type="button" onClick={handleButtonClick}>Ir Para Pagamento</button>
       </>
     );
   }

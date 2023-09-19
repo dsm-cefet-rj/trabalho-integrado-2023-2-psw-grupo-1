@@ -34,29 +34,10 @@
   "Carrinho": [
     {
       "produtos": [],
-      "valorTotal": 420,
-      "quantidade": 9,
+      "valorTotal": 0,
+      "quantidade": 0,
       "id": 1
     }
   ],
-  "Pagamento": [
-    {
-      "idCarrinho": 1,
-      "valorPagamento": 60,
-      "formaPagamento": "Pix",
-      "id": 1
-    },
-    {
-      "idCarrinho": 1,
-      "valorPagamento": 205,
-      "formaPagamento": "Vale Alimentação",
-      "id": 2
-    },
-    {
-      "idCarrinho": 1,
-      "valorPagamento": 335,
-      "formaPagamento": "Credito",
-      "id": 3
-    }
-  ]
+  "Pagamento": []
 }
