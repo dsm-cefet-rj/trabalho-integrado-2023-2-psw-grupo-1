@@ -20,11 +20,11 @@ const TelaPedido = () => {
                     <p>Status do Pedido:</p>
                     <p>Tempo de Espera:</p>
                     <p>Local de Entrega:</p>
-                    <p>N� do pedido:</p>
+                    <p>Nº do pedido:</p>
                 </div>
 
                 <div class="retanguloRedondo retanguloContato" style={{ height: 40}}>
-                    <p class="textoCentralizado2">Numero de Contato: 99999-9999</p>
+                    <p class="textoCentralizado2">Número de Contato: 99999-9999</p>
                 </div>
                 <button onClick={handleClick}>aaa</button>
             </div>

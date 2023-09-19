@@ -12,11 +12,11 @@ function App() {
       </header>
       <AppRouter/>
       <footer>
-            <nav>
-              <a onClick={() => navigate("/")}>Cardapio</a>
+        <nav>
+        <a onClick={() => navigate("/cardapio")}>Cardapio</a>
               <a onClick={() => navigate("/carrinho")}>Carrinho</a>
-              <a>Pedido</a>
-            </nav>
+              <a onClick={() => navigate("pedido")}>Pedido</a>
+        </nav>
       </footer>
     </>
   );
