@@ -13,9 +13,9 @@ function App() {
       <AppRouter/>
       <footer>
         <nav>
-        <a onClick={() => navigate("/cardapio")}>Cardapio</a>
-              <a onClick={() => navigate("/carrinho")}>Carrinho</a>
-              <a onClick={() => navigate("pedido")}>Pedido</a>
+          <a onClick={() => navigate("/cardapio")}>Cardapio</a>
+          <a onClick={() => navigate("/carrinho")}>Carrinho</a>
+          <a onClick={() => navigate("pedido")}>Pedido</a>
         </nav>
       </footer>
     </>
