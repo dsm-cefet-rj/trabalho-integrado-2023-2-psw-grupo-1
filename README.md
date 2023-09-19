@@ -1,6 +1,6 @@
 ## Comandos para execução do projeto
 
-### Baixar e instalar pacotes:
+### Instalar pacotes:
 #### yarn
 
 ### Execução da aplicação: 
