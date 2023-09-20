@@ -26,3 +26,36 @@
 .imagem-produto img {
     height: 100px;
 }
+
+.pop-pup-pizza-container {
+    width: 100%;
+    position: absolute;
+    margin-top: 100px;
+    z-index: 2;
+}
+
+.pop-up-pizza {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+.pop-up-campos {
+    background-color: white;
+    width: 400px;
+}
+
+.pop-up-campos * {
+    margin: 10px;
+}
+
+.botoes {
+    display: flex;
+    justify-content: space-between;
+    margin: 0;
+}
+
+.blur {
+    filter: blur(5px);
+}
