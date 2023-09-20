@@ -40,16 +40,88 @@
     {
       "produtos": [
         {
+          "nome": "Calabresa",
+          "valor": 50,
+          "descricao": "Massa, molho de tomate, queijo, calabresa e cebola.",
+          "imagem": "../imagens/pizza-portuguesa.jpg",
+          "id": 1,
+          "idProdutoCarrinho": 1
+        },
+        {
+          "nome": "Calabresa",
+          "valor": 50,
+          "descricao": "Massa, molho de tomate, queijo, calabresa e cebola.",
+          "imagem": "../imagens/pizza-portuguesa.jpg",
+          "id": 1,
+          "idProdutoCarrinho": 2
+        },
+        {
+          "nome": "Calabresa",
+          "valor": 50,
+          "descricao": "Massa, molho de tomate, queijo, calabresa e cebola.",
+          "imagem": "../imagens/pizza-portuguesa.jpg",
+          "id": 1,
+          "idProdutoCarrinho": 3
+        },
+        {
+          "nome": "Frango c/ Catupiry",
+          "imagem": "../imagens/pizza-portuguesa.jpg",
+          "descricao": "Massa, molho de tomate, queijo, frange e catupiry.",
+          "valor": 60,
+          "id": 2,
+          "idProdutoCarrinho": 4
+        },
+        {
           "nome": "Peperoni",
           "imagem": "../imagens/pizza-portuguesa.jpg",
           "descricao": "Massa, molho de tomate, queijo, peperoni.",
           "valor": "40",
           "id": 3,
-          "idProdutoCarrinho": 4
+          "idProdutoCarrinho": 5
+        },
+        {
+          "nome": "Frango c/ Catupiry",
+          "imagem": "../imagens/pizza-portuguesa.jpg",
+          "descricao": "Massa, molho de tomate, queijo, frange e catupiry.",
+          "valor": 60,
+          "id": 2,
+          "idProdutoCarrinho": 6
+        },
+        {
+          "nome": "Calabresa",
+          "valor": 50,
+          "descricao": "Massa, molho de tomate, queijo, calabresa e cebola.",
+          "imagem": "../imagens/pizza-portuguesa.jpg",
+          "id": 1,
+          "idProdutoCarrinho": 7
+        },
+        {
+          "nome": "Mussarela",
+          "imagem": "../imagens/pizza-portuguesa.jpg",
+          "descricao": "Massa, molho de tomate, queijo.",
+          "valor": "45",
+          "id": 5,
+          "idProdutoCarrinho": 8
+        },
+        {
+          "nome": "Peperoni",
+          "imagem": "../imagens/pizza-portuguesa.jpg",
+          "descricao": "Massa, molho de tomate, queijo, peperoni.",
+          "valor": "40",
+          "id": 4,
+          "idProdutoCarrinho": 9
+        },
+        {
+          "nome": "Peperoni",
+          "imagem": "../imagens/pizza-portuguesa.jpg",
+          "descricao": "Massa, molho de tomate, queijo, peperoni.",
+          "valor": "40",
+          "id": 3,
+          "idProdutoCarrinho": 10
         }
       ],
-      "valorTotal": 40,
-      "quantidade": 1,
+      "valorTotal": 485,
+      "quantidade": 10,
       "id": 1
     }
   ],
