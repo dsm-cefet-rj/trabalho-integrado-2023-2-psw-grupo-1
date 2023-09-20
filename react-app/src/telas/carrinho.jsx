@@ -8,7 +8,7 @@ const TelaCarrinho = () => {
     const navigate = useNavigate()
     const dispatch = useDispatch()
 
-    const handleButtonClick = () => {
+    const handleButtonClick = (event) => {
       navigate('../pagamento');
     }
 
@@ -25,13 +25,13 @@ const TelaCarrinho = () => {
         "valorTotal": valorProduto
       }
 
-       dispatch(deleteProdutoCarrinho(dado))
+      dispatch(deleteProdutoCarrinho(dado))
 
-      // fetch('http://localhost:8000/carrinho/1', {
-      //    "method": "PUT",
-      //    "body": JSON.stringify(carrinhoSelector),
-      //    "headers": {"Content-type": "application/json;charset=UTF-8"}
-      //  })
+      fetch('http://localhost:8000/carrinho/1', {
+         "method": "PUT",
+         "body": JSON.stringify(carrinhoSelector),
+         "headers": {"Content-type": "application/json;charset=UTF-8"}
+       })
     }
 
     return (

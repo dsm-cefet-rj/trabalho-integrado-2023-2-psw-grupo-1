@@ -35,7 +35,7 @@ const TelaHome = () => {
     //O carrinho do usuário vai passar a existir no momento do login, nesse momento se tem como premissa que o carrinho já existe
     fetch('http://localhost:8000/carrinho/1', {
          "method": "PUT",
-         "body": JSON.stringify(novoCarrinho),
+         "body": JSON.stringify(carrinho2),
          "headers": {"Content-type": "application/json;charset=UTF-8"}
        })
 

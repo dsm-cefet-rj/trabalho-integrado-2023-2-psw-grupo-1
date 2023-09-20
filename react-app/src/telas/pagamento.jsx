@@ -3,6 +3,7 @@ import "./pagamento.css"; // Importe o arquivo CSS
 import { useDispatch, useSelector } from "react-redux"
 import { changePagamento } from "../redux/pagamentoSlice";
 import { useNavigate } from "react-router-dom";
+import { changePedido } from "../redux/pedidoSlice";
 
 const TelaPagamento = () => {
   const [carrinho, setCarrinho] = useState(null);
@@ -10,6 +11,7 @@ const TelaPagamento = () => {
   const [endereco, setEndereco] = useState(null);
   const [formaPagamento, setFormaPagamento] = useState(""); // Estado para a forma de pagamento selecionada
   const carrinho2 = useSelector(state => state.carrinho)
+  const pedido = useSelector(state => state.pedido)
   const navigate = useNavigate()
   const dispatch = useDispatch()
 
@@ -27,6 +29,12 @@ const TelaPagamento = () => {
       formaPagamento: formaPagamento, // Usar o estado formaPagamento
     };
 
+    let dadoPedido = {
+      "idProdutoCarrinho": carrinho2.idProdutoCarrinho,
+      "localEntrega": event.target.endereco.value
+    }
+
+    dispatch(changePedido(dadoPedido))
     dispatch(changePagamento(dadoPagamento))
 
     fetch("http://localhost:8000/pagamento", {
@@ -34,35 +42,15 @@ const TelaPagamento = () => {
       body: JSON.stringify(dadoPagamento),
       headers: { "Content-type": "application/json;charset=UTF-8" },
     })
-      .then((response) => response.json())
-      .then((json) => setPagamento(json));
+
+    fetch("http://localhost:8000/pedido", {
+      method: "POST",
+      body: JSON.stringify(pedido),
+      headers: { "Content-type": "application/json;charset=UTF-8" },
+    });
 
       navigate("../pedido")
   };
-
-  useEffect(() => {
-    if (pagamento != null && endereco != null) {
-      let dadoPedido = {
-        idCarrinho: carrinho.id,
-        idPagamento: pagamento.id,
-        endereco: endereco,
-      };
-
-      fetch("http://localhost:8000/pedido", {
-        method: "POST",
-        body: JSON.stringify(dadoPedido),
-        headers: { "Content-type": "application/json;charset=UTF-8" },
-      });
-      //window.location.replace("http://localhost:3000/pedido");
-    }
-  }, [pagamento]);
-
-  useEffect(() => {
-    fetch("http://localhost:8000/carrinho/1")
-      .then((response) => response.json())
-      .then((json) => setCarrinho(json));
-  }, []);
-
   // Função para atualizar o estado formaPagamento quando uma opção é selecionada
   const handleFormaPagamentoChange = (event) => {
     setFormaPagamento(event.target.value);
