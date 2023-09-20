@@ -7,7 +7,7 @@ import "./home.css"
 const TelaHome = () => {
   const [produtos, setProdutos] = useState(null)
   const [displayPopUp, setDisplayPopUp] = useState("none")
-  const [isBlur, setIsBlur] = useState(false)
+  const [blurValue, setBlurValue] = useState("none")
   const [produtoPopUp, setProdutoPopUp] = useState(null)
   const dispatch = useDispatch()
   const  carrinho2  = useSelector(state => state.carrinho)
@@ -44,14 +44,14 @@ const TelaHome = () => {
        })
 
     setDisplayPopUp("none")
-    setIsBlur(false)
+    setBlurValue("blur(0px)")
   }
 
   const handleClickCancelarProduto = (event) => {
 
 
     setDisplayPopUp("none")
-    setIsBlur(false)
+    setBlurValue("blur(0px)")
   }
   
   const handleClickProduto = (event) => {
@@ -62,7 +62,7 @@ const TelaHome = () => {
     setProdutoPopUp(produtoAtual)
 
     setDisplayPopUp("block")
-    setIsBlur(true)
+    setBlurValue("blur(5px)")
   }
 
     useEffect(() => {
@@ -86,7 +86,7 @@ const TelaHome = () => {
           </div>
         </div>
       </div>
-      <div className={`produtos-container ${isBlur === true && "blur"}`}>
+      <div className={`produtos-container blur`} style={{filter: blurValue}}>
         {produtos && produtos.map(p => {
           return<div key={p.id} className="produto" onClick={handleClickProduto} id={p.id}>
                   <div className="imagem-produto">
