@@ -8,11 +8,13 @@ const TelaHome = () => {
   const [produtos, setProdutos] = useState(null)
   const [displayPopUp, setDisplayPopUp] = useState("none")
   const [isBlur, setIsBlur] = useState(false)
+  const [produtoPopUp, setProdutoPopUp] = useState(null)
   const dispatch = useDispatch()
   const  carrinho2  = useSelector(state => state.carrinho)
 
   const handleClickConfirmarProduto = (event) => {
     let produtoId = parseInt(event.currentTarget.id);
+    console.log(event.target.id)
 
     let produtoAtual = produtos.filter(p => p.id === produtoId)[0]
 
@@ -39,10 +41,24 @@ const TelaHome = () => {
          "headers": {"Content-type": "application/json;charset=UTF-8"}
        })
 
-    alert("Produto adicionado ao carrinho")
+    setDisplayPopUp("none")
+    setIsBlur(false)
+  }
+
+  const handleClickCancelarProduto = (event) => {
+
+
+    setDisplayPopUp("none")
+    setIsBlur(false)
   }
   
   const handleClickProduto = (event) => {
+    let produtoId = parseInt(event.currentTarget.id);
+
+    let produtoAtual = produtos.filter(p => p.id === produtoId)[0]
+
+    setProdutoPopUp(produtoAtual)
+
     setDisplayPopUp("block")
     setIsBlur(true)
   }
@@ -58,12 +74,12 @@ const TelaHome = () => {
       <div className="pop-pup-pizza-container" style={{display: displayPopUp}}>
         <div className="pop-up-pizza"> 
           <div className="pop-up-campos">
-            <h2>Nome Pizza</h2>
-            <p>Descricao: Lorem ipsum dolor sit amet consectetur adipisicing elit. Nesciunt ut reiciendis excepturi praesentium ipsam impedit earum deleniti eligendi, quo, nobis at vel itaque voluptates totam aperiam! Voluptatum necessitatibus illo dolores.</p>
-            <div>Valor: </div>
+            <h2>{produtoPopUp && produtoPopUp.nome}</h2>
+            <p>Descricao: {produtoPopUp && produtoPopUp.descricao}</p>
+            <div>Valor: {produtoPopUp && produtoPopUp.valor}</div>
             <div className="botoes">
-              <button type="button" onClick={handleClickConfirmarProduto}>Adicionar ao Carrinho</button>
-              <button type="button" >Cancelar</button>
+              <button type="button" id={produtoPopUp && produtoPopUp.id} onClick={handleClickConfirmarProduto}>Adicionar ao Carrinho</button>
+              <button type="button" onClick={handleClickCancelarProduto}>Cancelar</button>
             </div>
           </div>
         </div>
