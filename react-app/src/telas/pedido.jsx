@@ -1,13 +1,30 @@
-import React, { useEffect, useState } from "react";
-import "./pedido.css"; // Importe o arquivo CSS
-import { useSelector } from "react-redux"
+import "./pagamento.css";
+import { useState } from "react";
+import { useSelector, useDispatch } from "react-redux"
+import { alteraStatus } from "../redux/pedidoSlice";
 
 const TelaStatusPedido = () => {
     const pagamento = useSelector(state => state.pagamento);
     const pedido = useSelector(state => state.pedido)
     const carrinho = useSelector(state => state.carrinho)
+    const [contadorStatus, setContadorStatus] = useState(0)
+    const dispatch = useDispatch()
 
+    const listaStatus = ["Em Preparo", "Pedido Enviado", "Pedido Entregue"]
+    
+    const pararMudancaStatus = () => clearTimeout(timerStatus)
 
+    const timerStatus = setTimeout(() => {
+        if (contadorStatus > listaStatus.length - 1) {
+            pararMudancaStatus()
+            return
+        }
+        dispatch(alteraStatus({
+            ...pedido,
+            "statusPedido": listaStatus[contadorStatus]
+        }))
+        setContadorStatus(contadorStatus + 1)
+    }, 5000)
     
     return (
         <>
@@ -41,6 +58,9 @@ const TelaStatusPedido = () => {
                                 <li>Nenhum produto encontrado</li>
                             )}
                         </ul>
+                    </div>
+                    <div>
+                        <label>Status Pedido: {pedido && pedido.statusPedido}</label>
                     </div>
                     <div>
                         <label> Telefone de contato: </label> {pedido && pedido.numeroContato}

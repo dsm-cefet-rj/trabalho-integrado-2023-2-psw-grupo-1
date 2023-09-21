@@ -9,23 +9,29 @@ export const pedidoSlice = createSlice({
       "numeroContato": "91234-5678",
       "tempoEntrega": 30,
       "numeroPedido": 0,
-      "statusPedido": "Em preparo",
+      "statusPedido": "Aguardando Confirmação",
       "id": 1
     },
     reducers:{
         changePedido(state, { payload }) {
-            return { 
+            return {
+                ...state,
                 "idProdutoCarrinho": payload.idProdutoCarrinho,
                 "localEntrega": payload.localEntrega,
-                "numeroContato": "99999-9999",
                 "numeroPedido": Math.floor(Math.random()*100),
                 "id": parseInt(uniqueId())
+            }
+        },
+        alteraStatus(state, { payload }) {
+            return { 
+                ...payload,
+                "statusPedido": payload.statusPedido
             }
         }
     }
 })
 
-export const { changePedido } = pedidoSlice.actions
+export const { changePedido, alteraStatus } = pedidoSlice.actions
 
 export const selectPedido = state => state.carrinho
 
