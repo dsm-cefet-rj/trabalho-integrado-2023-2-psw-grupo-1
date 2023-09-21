@@ -1,31 +1,54 @@
-import pedidoSlice from "../redux/pedidoSlice"
-import "./pedido.css"
+import React, { useEffect, useState } from "react";
+import "./pedido.css"; // Importe o arquivo CSS
 import { useSelector } from "react-redux"
 
-const TelaPedido = () => {
-    const pagamento = useSelector(state => state.pagamento)
+const TelaStatusPedido = () => {
+    const pagamento = useSelector(state => state.pagamento);
     const pedido = useSelector(state => state.pedido)
+    const carrinho = useSelector(state => state.carrinho)
 
+
+    
     return (
-      <>
-            <div>
-                <h2 style={{textAlign: 'center'}}>Pedido</h2>
-
-                <div class="retanguloRedondo">
-                    <h3 style={{ textAlign: 'center'}}>2 pizzas calabresa</h3>
-                    <p>Local de entrega: {pedido && pedido.localEntrega}</p>
-                    <p>Status do Pedido: {pedido && pedido.statusPedido}</p>
-                    <p>Tempo de Espera: {pedido && pedido.tempoEntrega} minutos</p>
-                    <p>Local de Entrega: {pedido && pedido.localEntrega}</p>
-                    <p>Nº do pedido: {pedido && pedido.numeroPedido}</p>
-                </div>
-
-                <div class="retanguloRedondo retanguloContato" style={{ height: 40}}>
-                    <p class="textoCentralizado2">Número de Contato: {pedido && pedido.numeroContato}</p>
+        <>
+            <div className="container">
+                <div className="retangulo">
+                    <h2>Status do Pedido</h2>
+                    <div className="item">
+                        <label>Valor Total do Pedido:</label>
+                        <span>R$ {pagamento &&  pagamento.valorPagamento.toFixed(2)}</span>
+                    </div>
+                    <div className="item">
+                        <label>Quantidade de Itens no Carrinho:</label>
+                        {carrinho && carrinho.quantidade}
+                    </div>
+                    <div className="item">
+                        <label>Forma de Pagamento Realizada:</label>
+                        {pagamento && pagamento.formaPagamento}
+                    </div>
+                    <div className="item">
+                        <label>Endereço de Entrega:</label>
+                        {pedido && pedido.localEntrega}
+                    </div>
+                    <div className="item">
+                        <label>Pizzas Compradas:</label>
+                        <ul>
+                            {carrinho && carrinho.produtos ? (
+                                carrinho.produtos.map((produto) => (
+                                    <li key={produto.idProdutoCarrinho}>{produto.nome}</li>
+                                ))
+                            ) : (
+                                <li>Nenhum produto encontrado</li>
+                            )}
+                        </ul>
+                    </div>
+                    <div>
+                        <label> Telefone de contato: </label> {pedido && pedido.numeroContato}
+                    </div>
                 </div>
             </div>
-      </>
+        </>
     );
-  }
-  
-  export default TelaPedido;
+};
+
+export default TelaStatusPedido;
