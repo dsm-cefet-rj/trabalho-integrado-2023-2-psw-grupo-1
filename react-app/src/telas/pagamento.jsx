@@ -6,8 +6,6 @@ import { useNavigate } from "react-router-dom";
 import { changePedido } from "../redux/pedidoSlice";
 
 const TelaPagamento = () => {
-  const [carrinho, setCarrinho] = useState(null);
-  const [pagamento, setPagamento] = useState(null);
   const [endereco, setEndereco] = useState(null);
   const [formaPagamento, setFormaPagamento] = useState(""); // Estado para a forma de pagamento selecionada
   const carrinho2 = useSelector(state => state.carrinho)
