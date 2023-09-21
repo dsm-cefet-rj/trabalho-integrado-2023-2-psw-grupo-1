@@ -37,6 +37,29 @@
     }
   ],
   "Carrinho": [],
-  "Pagamento": [],
-  "Pedido": []
+  "Pagamento": [
+    {
+      "idCarrinho": 1,
+      "valorPagamento": 60,
+      "formaPagamento": "Pix",
+      "id": 1
+    },
+    {
+      "idCarrinho": 1,
+      "valorPagamento": 60,
+      "formaPagamento": "Pix",
+      "id": 2
+    }
+  ],
+  "Pedido": [
+    {
+      "idProdutoCarrinho": 0,
+      "localEntrega": "",
+      "numeroContato": "91234-5678",
+      "tempoEntrega": 30,
+      "numeroPedido": 0,
+      "statusPedido": "Em preparo",
+      "id": 1
+    }
+  ]
 }
