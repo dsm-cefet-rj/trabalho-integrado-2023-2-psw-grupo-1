@@ -1,9 +1,19 @@
 import './App.css';
 import AppRouter from './AppRouter';
 import { useNavigate } from 'react-router-dom';
+import { useSelector } from 'react-redux';
 
 function App() {
   const navigate = useNavigate()
+  const pedido = useSelector(state => state.pedido)
+
+  const handleClickPedido = () => {
+    if (pedido.numeroPedido === 0) {
+      alert("É preciso terminar de fazer o pedido ver o pedido")
+      return;
+    }
+    navigate("pedido")
+  }
 
   return (
     <>
@@ -15,7 +25,7 @@ function App() {
         <nav>
           <a onClick={() => navigate("/cardapio")}>Cardapio</a>
           <a onClick={() => navigate("/carrinho")}>Carrinho</a>
-          <a onClick={() => navigate("pedido")}>Pedido</a>
+          <a onClick={handleClickPedido}>Pedido</a>
         </nav>
       </footer>
     </>

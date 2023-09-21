@@ -26,3 +26,42 @@
 .imagem-produto img {
     height: 100px;
 }
+
+.pop-pup-pizza-container {
+    display: block;
+    width: 100%;
+    position: absolute;
+    margin-top: 100px;
+    z-index: 2;
+    transition: visibility 1s;
+}
+
+.pop-up-pizza {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+.pop-up-campos {
+    background-color: white;
+    width: 400px;
+    box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.438);
+    border-radius: 8px;
+}
+
+.pop-up-campos * {
+    margin: 10px;
+}
+
+.botoes {
+    display: flex;
+    justify-content: space-between;
+    margin: 0;
+}
+
+.blur {
+    filter: unset;
+    transition: filter 0.2s;
+    transition-timing-function: linear;
+}

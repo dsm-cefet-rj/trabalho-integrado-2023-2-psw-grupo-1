@@ -3,78 +3,194 @@
     {
       "nome": "Calabresa",
       "valor": 50,
+      "descricao": "Massa, molho de tomate, queijo, calabresa e cebola.",
       "imagem": "../imagens/pizza-portuguesa.jpg",
       "id": 1
     },
     {
       "nome": "Frango c/ Catupiry",
       "imagem": "../imagens/pizza-portuguesa.jpg",
+      "descricao": "Massa, molho de tomate, queijo, frange e catupiry.",
       "valor": 60,
       "id": 2
     },
     {
       "nome": "Peperoni",
       "imagem": "../imagens/pizza-portuguesa.jpg",
+      "descricao": "Massa, molho de tomate, queijo, peperoni.",
       "valor": "40",
       "id": 3
     },
     {
       "nome": "Peperoni",
       "imagem": "../imagens/pizza-portuguesa.jpg",
+      "descricao": "Massa, molho de tomate, queijo, peperoni.",
       "valor": "40",
       "id": 4
     },
     {
       "nome": "Mussarela",
       "imagem": "../imagens/pizza-portuguesa.jpg",
+      "descricao": "Massa, molho de tomate, queijo.",
       "valor": "45",
       "id": 5
     }
   ],
-  "Carrinho": [
-    {
-      "produtos": [
-        {
-          "nome": "Mussarela",
-          "imagem": "../imagens/pizza-portuguesa.jpg",
-          "valor": "45",
-          "id": 5,
-          "idProdutoCarrinho": 1
-        },
-        {
-          "nome": "Peperoni",
-          "imagem": "../imagens/pizza-portuguesa.jpg",
-          "valor": "40",
-          "id": 3,
-          "idProdutoCarrinho": 2
-        },
-        {
-          "nome": "Calabresa",
-          "valor": 50,
-          "imagem": "../imagens/pizza-portuguesa.jpg",
-          "id": 1,
-          "idProdutoCarrinho": 3
-        }
-      ],
-      "valorTotal": 135,
-      "quantidade": 3,
-      "id": 1
-    }
-  ],
+  "Carrinho": [],
   "Pagamento": [
     {
       "idCarrinho": 1,
-      "valorPagamento": 195,
+      "valorPagamento": 60,
       "formaPagamento": "Pix",
       "id": 1
+    },
+    {
+      "idCarrinho": 1,
+      "valorPagamento": 60,
+      "formaPagamento": "Pix",
+      "id": 2
+    },
+    {
+      "idCarrinho": 1,
+      "valorPagamento": 60,
+      "formaPagamento": "Pix",
+      "id": 3
+    },
+    {
+      "idCarrinho": 1,
+      "valorPagamento": 95,
+      "formaPagamento": "Pix",
+      "id": 4
+    },
+    {
+      "idCarrinho": 1,
+      "valorPagamento": 45,
+      "formaPagamento": "Pix",
+      "id": 5
+    },
+    {
+      "idCarrinho": 1,
+      "valorPagamento": 105,
+      "formaPagamento": "Vale Alimentação",
+      "id": 6
+    },
+    {
+      "idCarrinho": 1,
+      "valorPagamento": 45,
+      "formaPagamento": "Vale Alimentação",
+      "id": 7
+    },
+    {
+      "idCarrinho": 1,
+      "valorPagamento": 100,
+      "formaPagamento": "Vale Alimentação",
+      "id": 8
+    },
+    {
+      "idCarrinho": 1,
+      "valorPagamento": 100,
+      "formaPagamento": "Vale Alimentação",
+      "id": 9
+    },
+    {
+      "idCarrinho": 1,
+      "valorPagamento": 85,
+      "formaPagamento": "Débito",
+      "id": 10
+    },
+    {
+      "idCarrinho": 1,
+      "valorPagamento": 105,
+      "formaPagamento": "Vale Alimentação",
+      "id": 11
+    },
+    {
+      "idCarrinho": 1,
+      "valorPagamento": 105,
+      "formaPagamento": "Débito",
+      "id": 12
+    },
+    {
+      "idCarrinho": 1,
+      "valorPagamento": 110,
+      "formaPagamento": "Vale Alimentação",
+      "id": 13
+    },
+    {
+      "idCarrinho": 1,
+      "valorPagamento": 95,
+      "formaPagamento": "Vale Alimentação",
+      "id": 14
+    },
+    {
+      "idCarrinho": 1,
+      "valorPagamento": 85,
+      "formaPagamento": "Credito",
+      "id": 15
+    },
+    {
+      "idCarrinho": 1,
+      "valorPagamento": 50,
+      "formaPagamento": "Pix",
+      "id": 16
+    },
+    {
+      "idCarrinho": 1,
+      "valorPagamento": 105,
+      "formaPagamento": "Débito",
+      "id": 17
+    },
+    {
+      "idCarrinho": 1,
+      "valorPagamento": 50,
+      "formaPagamento": "Pix",
+      "id": 18
+    },
+    {
+      "idCarrinho": 1,
+      "valorPagamento": 85,
+      "formaPagamento": "Débito",
+      "id": 19
+    },
+    {
+      "idCarrinho": 1,
+      "valorPagamento": 95,
+      "formaPagamento": "Vale Alimentação",
+      "id": 20
+    },
+    {
+      "idCarrinho": 1,
+      "valorPagamento": 95,
+      "formaPagamento": "Vale Alimentação",
+      "id": 21
+    },
+    {
+      "idCarrinho": 1,
+      "valorPagamento": 95,
+      "formaPagamento": "Vale Alimentação",
+      "id": 22
+    },
+    {
+      "idCarrinho": 1,
+      "valorPagamento": 50,
+      "formaPagamento": "Vale Alimentação",
+      "id": 23
+    },
+    {
+      "idCarrinho": 1,
+      "valorPagamento": 105,
+      "formaPagamento": "Vale Alimentação",
+      "id": 24
     }
   ],
   "Pedido": [
     {
       "idProdutoCarrinho": 0,
       "localEntrega": "",
-      "numeroContato": "99999-9999",
+      "numeroContato": "91234-5678",
+      "tempoEntrega": 30,
       "numeroPedido": 0,
+      "statusPedido": "Em preparo",
       "id": 1
     }
   ]
