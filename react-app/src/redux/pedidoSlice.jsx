@@ -6,8 +6,10 @@ export const pedidoSlice = createSlice({
     initialState: {
       "idProdutoCarrinho": 0,
       "localEntrega": "",
-      "numeroContato": "99999-9999",
+      "numeroContato": "91234-5678",
+      "tempoEntrega": 30,
       "numeroPedido": 0,
+      "statusPedido": "Em preparo",
       "id": 1
     },
     reducers:{

@@ -3,79 +3,40 @@
     {
       "nome": "Calabresa",
       "valor": 50,
+      "descricao": "Massa, molho de tomate, queijo, calabresa e cebola.",
       "imagem": "../imagens/pizza-portuguesa.jpg",
       "id": 1
     },
     {
       "nome": "Frango c/ Catupiry",
       "imagem": "../imagens/pizza-portuguesa.jpg",
+      "descricao": "Massa, molho de tomate, queijo, frange e catupiry.",
       "valor": 60,
       "id": 2
     },
     {
       "nome": "Peperoni",
       "imagem": "../imagens/pizza-portuguesa.jpg",
+      "descricao": "Massa, molho de tomate, queijo, peperoni.",
       "valor": "40",
       "id": 3
     },
     {
       "nome": "Peperoni",
       "imagem": "../imagens/pizza-portuguesa.jpg",
+      "descricao": "Massa, molho de tomate, queijo, peperoni.",
       "valor": "40",
       "id": 4
     },
     {
       "nome": "Mussarela",
       "imagem": "../imagens/pizza-portuguesa.jpg",
+      "descricao": "Massa, molho de tomate, queijo.",
       "valor": "45",
       "id": 5
     }
   ],
-  "Carrinho": [
-    {
-      "produtos": [
-        {
-          "nome": "Mussarela",
-          "imagem": "../imagens/pizza-portuguesa.jpg",
-          "valor": "45",
-          "id": 5,
-          "idProdutoCarrinho": 1
-        },
-        {
-          "nome": "Peperoni",
-          "imagem": "../imagens/pizza-portuguesa.jpg",
-          "valor": "40",
-          "id": 3,
-          "idProdutoCarrinho": 2
-        },
-        {
-          "nome": "Calabresa",
-          "valor": 50,
-          "imagem": "../imagens/pizza-portuguesa.jpg",
-          "id": 1,
-          "idProdutoCarrinho": 3
-        }
-      ],
-      "valorTotal": 135,
-      "quantidade": 3,
-      "id": 1
-    }
-  ],
-  "Pagamento": [
-    {
-      "idCarrinho": 1,
-      "valorPagamento": 195,
-      "formaPagamento": "Pix",
-      "id": 1
-    }
-  ],
-  "Pedido": [
-    {
-      "idProdutoCarrinho": 0,
-      "localEntrega": "",
-      "numeroContato": "99999-9999",
-      "numeroPedido": 0,
-      "id": 1
-    }
-  ]
+  "Carrinho": [],
+  "Pagamento": [],
+  "Pedido": []
 }
