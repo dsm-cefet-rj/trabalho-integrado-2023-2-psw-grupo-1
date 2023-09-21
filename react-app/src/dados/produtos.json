@@ -36,14 +36,7 @@
       "id": 5
     }
   ],
-  "Carrinho": [
-    {
-      "produtos": [],
-      "valorTotal": 0,
-      "quantidade": 0,
-      "id": 1
-    }
-  ],
+  "Carrinho": [],
   "Pagamento": [],
   "Pedido": []
 }
