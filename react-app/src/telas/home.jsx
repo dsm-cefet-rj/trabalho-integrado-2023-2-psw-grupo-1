@@ -71,18 +71,31 @@ const TelaHome = () => {
       fetch('http://localhost:8000/produtos')
        .then(response => response.json())
        .then(json => setProdutos(json))
-     }, [])
 
-    useEffect(() => {
-      if(carrinhoMudou > 0) {
-        //O carrinho do usuário vai passar a existir no momento do login, nesse momento seem como premissa que o carrinho já existe
+       if (carrinho2.quantidade === 0 ) {
         fetch('http://localhost:8000/carrinho/1', {
              "method": "PUT",
              "body": JSON.stringify(carrinho2),
              "headers": {"Content-type": "application/json;charset=UTF-8"}
            })
+       }
+     }, [])
+
+    useEffect(() => {
+      if(carrinhoMudou > 0) {
+        fetch('http://localhost:8000/carrinho/1', {
+             "method": "PUT",
+             "body": JSON.stringify(carrinho2),
+             "headers": {"Content-type": "application/json;charset=UTF-8"}
+           })
+      } else {
+        fetch('http://localhost:8000/carrinho', {
+             "method": "POST",
+             "body": JSON.stringify(carrinho2),
+             "headers": {"Content-type": "application/json;charset=UTF-8"}
+           })
       }
-    })
+    }, [carrinhoMudou])
   return (
     <>
       <div className="pop-pup-pizza-container" style={{display: displayPopUp}}>
