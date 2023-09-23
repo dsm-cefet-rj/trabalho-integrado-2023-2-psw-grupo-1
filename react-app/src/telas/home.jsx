@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react"
 import { useDispatch, useSelector } from "react-redux";
 import { changeCarrinho } from "../redux/carrinhoSlice";
+import { iniciaProduto } from "../redux/produtosSlice";
 import uniqueId from 'lodash/uniqueId';
 import "./home.css"
 
@@ -70,7 +71,13 @@ const TelaHome = () => {
     useEffect(() => {
       fetch('http://localhost:8000/produtos')
        .then(response => response.json())
-       .then(json => setProdutos(json))
+       .then(json => {
+          setProdutos(json)
+          dispatch(iniciaProduto(json))
+        })
+
+      setProdutos(produtos)
+      dispatch(iniciaProduto(produtos))
 
        if (carrinho2.quantidade === 0 ) {
         fetch('http://localhost:8000/carrinho/1', {
