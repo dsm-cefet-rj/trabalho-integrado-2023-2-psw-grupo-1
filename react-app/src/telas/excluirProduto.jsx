@@ -6,7 +6,6 @@ const TelaExcluirProduto = () => {
     const [produtos, setProdutos] = useState(null)
     const [produtoPopUp, setProdutoPopUp] = useState(null)
     const [displayPopUp, setDisplayPopUp] = useState("none")
-    const [mudouProduto, setMudouProduto] = useState(0)
     const [blurValue, setBlurValue] = useState("none")
 
     const handleClickConfirmarDelecao = (event)=> {
@@ -20,7 +19,6 @@ const TelaExcluirProduto = () => {
         let novoProdutos = produtos.filter(p => p.id !== produtoId)
 
         setProdutos(novoProdutos)
-        setMudouProduto(mudouProduto + 1)
         setDisplayPopUp("none")
         setBlurValue("blur(0px)")
     }
@@ -44,7 +42,7 @@ const TelaExcluirProduto = () => {
         fetch('http://localhost:8000/produtos')
          .then(response => response.json())
          .then(json => setProdutos(json))
-       }, [mudouProduto])
+       }, [])
 
     return (
       <>
