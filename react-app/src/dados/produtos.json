@@ -38,46 +38,12 @@
   ],
   "Carrinho": [
     {
-      "produtos": [
-        {
-          "nome": "Calabresa",
-          "valor": 50,
-          "descricao": "Massa, molho de tomate, queijo, calabresa e cebola.",
-          "imagem": "../imagens/pizza-portuguesa.jpg",
-          "id": 1,
-          "idProdutoCarrinho": 1
-        },
-        {
-          "nome": "Frango c/ Catupiry",
-          "imagem": "../imagens/pizza-portuguesa.jpg",
-          "descricao": "Massa, molho de tomate, queijo, frange e catupiry.",
-          "valor": 60,
-          "id": 2,
-          "idProdutoCarrinho": 2
-        }
-      ],
-      "valorTotal": 110,
-      "quantidade": 2,
+      "produtos": [],
+      "valorTotal": 0,
+      "quantidade": 0,
       "id": 1
     }
-  ],
-  "Pagamento": [
-    {
-      "idCarrinho": 1,
-      "valorPagamento": 45,
-      "formaPagamento": "Credito",
-      "id": 1
-    }
-  ],
-  "Pedido": [
-    {
-      "idProdutoCarrinho": 0,
-      "localEntrega": "",
-      "numeroContato": "91234-5678",
-      "tempoEntrega": 30,
-      "numeroPedido": 0,
-      "statusPedido": "Aguardando Confirmação",
-      "id": 1
-    }
-  ]
+],
+  "Pagamento": [],
+  "Pedido": []
 }
