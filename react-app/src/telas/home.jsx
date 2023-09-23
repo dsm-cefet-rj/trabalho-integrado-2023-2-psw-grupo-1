@@ -9,6 +9,7 @@ const TelaHome = () => {
   const [displayPopUp, setDisplayPopUp] = useState("none")
   const [blurValue, setBlurValue] = useState("none")
   const [produtoPopUp, setProdutoPopUp] = useState(null)
+  const [carrinhoMudou, setCarrinhoMudou] = useState(0)
   const dispatch = useDispatch()
   const  carrinho2  = useSelector(state => state.carrinho)
 
@@ -37,14 +38,15 @@ const TelaHome = () => {
     dispatch(changeCarrinho(novoCarrinho))
 
     //O carrinho do usuário vai passar a existir no momento do login, nesse momento seem como premissa que o carrinho já existe
-    fetch('http://localhost:8000/carrinho/1', {
-         "method": "PUT",
-         "body": JSON.stringify(carrinho2),
-         "headers": {"Content-type": "application/json;charset=UTF-8"}
-       })
+    //fetch('http://localhost:8000/carrinho/1', {
+    //     "method": "PUT",
+    //     "body": JSON.stringify(carrinho2),
+    //     "headers": {"Content-type": "application/json;charset=UTF-8"}
+    //   })
 
     setDisplayPopUp("none")
     setBlurValue("blur(0px)")
+    setCarrinhoMudou(carrinhoMudou + 1)
   }
 
   const handleClickCancelarProduto = (event) => {
@@ -71,6 +73,16 @@ const TelaHome = () => {
        .then(json => setProdutos(json))
      }, [])
 
+    useEffect(() => {
+      if(carrinhoMudou > 0) {
+        //O carrinho do usuário vai passar a existir no momento do login, nesse momento seem como premissa que o carrinho já existe
+        fetch('http://localhost:8000/carrinho/1', {
+             "method": "PUT",
+             "body": JSON.stringify(carrinho2),
+             "headers": {"Content-type": "application/json;charset=UTF-8"}
+           })
+      }
+    })
   return (
     <>
       <div className="pop-pup-pizza-container" style={{display: displayPopUp}}>

@@ -6,6 +6,7 @@ import { useSelector } from 'react-redux';
 function App() {
   const navigate = useNavigate()
   const pedido = useSelector(state => state.pedido)
+  const carrinho = useSelector(state => state.carrinho)
 
   const handleClickPedido = () => {
     if (pedido.numeroPedido === 0) {
@@ -13,6 +14,14 @@ function App() {
       return;
     }
     navigate("pedido")
+  }
+
+  const handleClickCarrinho = () => {
+    if (carrinho.quantidade === 0) {
+      alert("É preciso preencher o carrinho para acessar.")
+      return;
+    }
+    navigate("carrinho")
   }
 
   return (
@@ -24,7 +33,7 @@ function App() {
       <footer>
         <nav>
           <a onClick={() => navigate("/cardapio")}>Cardapio</a>
-          <a onClick={() => navigate("/carrinho")}>Carrinho</a>
+          <a onClick={handleClickCarrinho}>Carrinho</a>
           <a onClick={handleClickPedido}>Pedido</a>
         </nav>
       </footer>
