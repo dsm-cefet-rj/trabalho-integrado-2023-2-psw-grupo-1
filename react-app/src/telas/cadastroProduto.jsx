@@ -1,4 +1,5 @@
 import { useState } from "react";
+import "./cadastroProduto.css"
 
 const TelaCadastroProduto = () => {
     const [produtoForm, setProdutoForm] = useState(null)
@@ -7,7 +8,9 @@ const TelaCadastroProduto = () => {
       e.preventDefault();
       var dado = {
          "nome": e.target.nome.value,
-         "valor": e.target.valor.value
+         "valor": e.target.valor.value,
+         "descricao": e.target.descricao.value,
+         "imagem": "../imagens/pizza-portuguesa.jpg"
        }
        fetch('http://localhost:8000/produtos', {
          "method": "POST",
@@ -16,6 +19,8 @@ const TelaCadastroProduto = () => {
        })
        .then(response => response.json())
        .then(json => console.log(json))
+
+       alert("Produto cadastrado com sucesso")
     }
 
     const handleInputChange = (e) => {
@@ -24,14 +29,24 @@ const TelaCadastroProduto = () => {
     }
     return (
       <>
-        <div>
-            <h2>Cadastro de produto</h2>
-            <form onSubmit={handleOnSubmit}>
+        <div className="cadastro-container">
+            <h2>Cadastro de Produto</h2>
+            <form onSubmit={handleOnSubmit} className="form">
+              <div className="campo">
                 <label>Nome</label>
                 <input type="text" name="nome" id="nome" onChange={handleInputChange} required/>
+              </div>
+              <div className="campo descricao">
+                <label>Descrição</label>
+                <textarea type="text" name="descricao" id="descricao" onChange={handleInputChange} required/>
+              </div>
+              <div className="campo valor">
                 <label>Valor</label>
                 <input type="number" name="Valor" id="valor" onChange={handleInputChange} required/>
-                <input type="submit" value="Submit" />
+              </div>
+              <div className="campo botao">
+                <input type="submit" value="Cadastrar" />
+              </div>
             </form>
         </div>
       </>
