@@ -34,9 +34,23 @@
       "descricao": "Massa, molho de tomate, queijo.",
       "valor": "45",
       "id": 5
+    },
+    {
+      "nome": "nome",
+      "valor": "30",
+      "descricao": "DESCRICAO",
+      "imagem": "../imagens/pizza-portuguesa.jpg",
+      "id": 6
     }
   ],
-  "Carrinho": [],
+  "Carrinho": [
+    {
+      "produtos": [],
+      "valorTotal": 0,
+      "quantidade": 0,
+      "id": 1
+    }
+  ],
   "Pagamento": [],
   "Pedido": []
 }
