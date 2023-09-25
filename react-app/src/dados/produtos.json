@@ -38,9 +38,18 @@
   ],
   "Carrinho": [
     {
-      "produtos": [],
-      "valorTotal": 0,
-      "quantidade": 0,
+      "produtos": [
+        {
+          "nome": "Calabresa",
+          "valor": 50,
+          "descricao": "Massa, molho de tomate, queijo, calabresa e cebola.",
+          "imagem": "../imagens/pizza-portuguesa.jpg",
+          "id": 1,
+          "idProdutoCarrinho": 1
+        }
+      ],
+      "valorTotal": 50,
+      "quantidade": 1,
       "id": 1
     }
   ],
