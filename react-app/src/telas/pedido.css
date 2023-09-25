@@ -1,32 +1,36 @@
-.textoCentralizado {
-  text-align: center;
-  margin-top: 10px;
-}
-
-.textoCentralizado2 {
-  text-align: center;
-  margin-top: 50px;
-}
-
-.retanguloRedondo {
+.retangulo {
   width: 400px;
-  /*largura*/
   height: 300px;
-  /* altura*/
-  background-color: #b0b0b0;
+  background-color: #c98888;
   border-radius: 20px;
-  color: #000000;
+  color: #2e3b27;
   text-align: center;
-  line-height: 40px;
+  padding: 20px; /* Adicione espaço interno para separar o conteúdo das bordas */
   margin: 0 auto;
 }
 
-.retanguloContato {
-      margin-bottom: 10px;
-    }
+.item {
+  margin-bottom: 10px; /* Adicione espaço entre os itens */
+}
 
-.footer {
-      position: fixed;
-      width: 100%;
-      bottom: 0;
-    }
+/* Aumente o tamanho da fonte para tornar o texto mais legível */
+.retangulo h2 {
+  font-size: 24px;
+}
+
+/* Estilize a lista de pizzas */
+.retangulo ul {
+  list-style: none;
+  padding: 0;
+}
+
+/* Estilize os itens da lista */
+.retangulo li {
+  margin: 5px 0; /* Adicione espaço entre os itens da lista */
+  font-size: 16px;
+}
+
+/* Adicione estilo para o rótulo */
+.retangulo label {
+  font-weight: bold;
+}

@@ -40,15 +40,15 @@
     {
       "produtos": [
         {
-          "nome": "Peperoni",
+          "nome": "Calabresa",
+          "valor": 50,
+          "descricao": "Massa, molho de tomate, queijo, calabresa e cebola.",
           "imagem": "../imagens/pizza-portuguesa.jpg",
-          "descricao": "Massa, molho de tomate, queijo, peperoni.",
-          "valor": "40",
-          "id": 3,
+          "id": 1,
           "idProdutoCarrinho": 1
         }
       ],
-      "valorTotal": 40,
+      "valorTotal": 50,
       "quantidade": 1,
       "id": 1
     }
@@ -71,6 +71,36 @@
       "valorPagamento": 40,
       "formaPagamento": "Credito",
       "id": 3
+    },
+    {
+      "idCarrinho": 1,
+      "valorPagamento": 40,
+      "formaPagamento": "",
+      "id": 4
+    },
+    {
+      "idCarrinho": 1,
+      "valorPagamento": 50,
+      "formaPagamento": "Débito",
+      "id": 5
+    },
+    {
+      "idCarrinho": 1,
+      "valorPagamento": 60,
+      "formaPagamento": "",
+      "id": 6
+    },
+    {
+      "idCarrinho": 1,
+      "valorPagamento": 160,
+      "formaPagamento": "",
+      "id": 7
+    },
+    {
+      "idCarrinho": 1,
+      "valorPagamento": 50,
+      "formaPagamento": "",
+      "id": 8
     }
   ],
   "Pedido": [

@@ -47,14 +47,15 @@ const TelaCarrinho = () => {
                         <h3>{p.nome}</h3>
                         <p>Valor: {p.valor}</p>
                     </div>
-                    <div className="lixeira" onClick={handleClickLixeira} id={p.idProdutoCarrinho}>X</div>
+                    <button type="button" className="botao-lixeira">
+                    <div className="lixeira" onClick={handleClickLixeira} id={p.idProdutoCarrinho}>X</div> </button>
                 </div>
             )
            })}
              <div className="valor-total">Valor Total: R${carrinhoSelector && carrinhoSelector.valorTotal.toFixed(2)}</div>
              <div className="quantidade">Quantidade: {carrinhoSelector && carrinhoSelector.quantidade}</div>
-              <button type="button" onClick={handleButtonClick}>
-            Ir Para Pagamento
+              <button type="button" className="botao" cl onClick={handleButtonClick}>
+            Pagar
           </button>
         </div>
       </>

@@ -1,12 +1,16 @@
 .carrinho-container {
-    margin: 0 auto;
-    width: 300px;
     display: flex;
-    flex-direction: column;
-    gap: 20px;
-    align-items: center;
     justify-content: center;
-    text-align: center;
+    gap: 10px;
+    align-items: center;
+    width: 500px;
+    overflow-x: auto;
+    margin: 0 auto;
+    padding: 90px;
+    background-color: rgb(10, 94, 10);
+    flex-direction: column;
+    flex-wrap: wrap;
+    border-radius: 15px;
 }
 
 .produto-container {
@@ -15,16 +19,20 @@
     justify-content: space-between;
     align-items: center;
     width: 250px;
-    border: 1px solid #0c0b0b; 
+    border: 6px solid #fafafa; 
     padding: 10px; 
+    background-color: white;
+    border-radius: 20px;
 }
 
 
 .produto-info {
-    display: flex;
+    top: 10px;
+    display: center;
     flex-direction: column;
     justify-content: center;
     text-align: center;
+    color: white;
 }
 
 .imagem-produto {
@@ -38,15 +46,35 @@
 .lixeira {
     cursor: pointer;
 }
+.botao-lixeira{
+    background-color: #FF0000;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+}
 
 .valor-total {
     /* Estilos específicos para o Valor Total */
     font-size: 20px;
-    margin-top: 20px; /* Espaço acima do Valor Total */
+    margin-top: 10px; /* Espaço acima do Valor Total */
+    color: white;
 }
 
 .quantidade {
     /* Estilos específicos para o Valor Total */
     font-size: 20px;
     margin-top: 10px; /* Espaço acima do Valor Total */
+    color: white;
+}
+.botao {
+    background-color: #FF0000;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+    transform: translate(0%,10%);
 }

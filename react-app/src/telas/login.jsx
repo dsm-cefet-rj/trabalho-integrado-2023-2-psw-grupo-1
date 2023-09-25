@@ -17,7 +17,8 @@ const TelaLogin = () => {
   }
 
   return (
-    <body className="body">
+    <body>
+    <body>
       <div className="div">
       <h1 className="header-login">Faça Login</h1>
         <form onSubmit={handleLogin}>
@@ -45,6 +46,7 @@ const TelaLogin = () => {
           {error && <p>{error}</p>}
         </form>
       </div>
+    </body>
     </body>
   );
 }

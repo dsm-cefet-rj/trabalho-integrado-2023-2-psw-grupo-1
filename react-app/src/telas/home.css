@@ -1,12 +1,16 @@
 .produtos-container {
     display: flex;
-    justify-content: center;
-    gap: 10px;
+    justify-content: flex;
+    gap: 30px;
     align-items: center;
-    width: 100%;
+    width: 190px;
+    height: flex;
     overflow-x: auto;
     margin: 0 auto;
-    padding: 10px;
+    padding: 100px;
+    background-color: rgb(10, 94, 10);
+    flex-direction: column;
+    border-radius: 20px;
 }
 
 .produto {
@@ -20,6 +24,8 @@
     cursor: pointer;
     border: 1px solid #0c0b0b;
     padding: 10px;
+    background-color: white;
+    border-radius: 15px;
 }
 
 .imagem-produto {
