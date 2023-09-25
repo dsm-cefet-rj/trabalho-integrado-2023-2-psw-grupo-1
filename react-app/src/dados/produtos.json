@@ -38,12 +38,50 @@
   ],
   "Carrinho": [
     {
-      "produtos": [],
-      "valorTotal": 0,
-      "quantidade": 0,
+      "produtos": [
+        {
+          "nome": "Peperoni",
+          "imagem": "../imagens/pizza-portuguesa.jpg",
+          "descricao": "Massa, molho de tomate, queijo, peperoni.",
+          "valor": "40",
+          "id": 3,
+          "idProdutoCarrinho": 1
+        }
+      ],
+      "valorTotal": 40,
+      "quantidade": 1,
       "id": 1
     }
   ],
-  "Pagamento": [],
-  "Pedido": []
+  "Pagamento": [
+    {
+      "idCarrinho": 1,
+      "valorPagamento": 150,
+      "formaPagamento": "Pix",
+      "id": 1
+    },
+    {
+      "idCarrinho": 1,
+      "valorPagamento": 60,
+      "formaPagamento": "",
+      "id": 2
+    },
+    {
+      "idCarrinho": 1,
+      "valorPagamento": 40,
+      "formaPagamento": "Credito",
+      "id": 3
+    }
+  ],
+  "Pedido": [
+    {
+      "idProdutoCarrinho": 0,
+      "localEntrega": "",
+      "numeroContato": "91234-5678",
+      "tempoEntrega": 30,
+      "numeroPedido": 0,
+      "statusPedido": "Aguardando Confirmação",
+      "id": 1
+    }
+  ]
 }

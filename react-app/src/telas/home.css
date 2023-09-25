@@ -3,12 +3,14 @@
     justify-content: center;
     gap: 10px;
     align-items: center;
-    width: 410px;
-    flex-wrap: wrap;
+    width: 100%;
+    overflow-x: auto;
     margin: 0 auto;
+    padding: 10px;
 }
 
 .produto {
+    flex: 0 0 auto;
     width: 200px;
     height: 200px;
     display: flex;
@@ -16,6 +18,8 @@
     flex-direction: column;
     text-align: center;
     cursor: pointer;
+    border: 1px solid #0c0b0b;
+    padding: 10px;
 }
 
 .imagem-produto {
