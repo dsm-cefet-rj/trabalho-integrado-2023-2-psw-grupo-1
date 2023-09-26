@@ -40,16 +40,32 @@
     {
       "produtos": [
         {
-          "nome": "Calabresa",
-          "valor": 50,
-          "descricao": "Massa, molho de tomate, queijo, calabresa e cebola.",
+          "nome": "Frango c/ Catupiry",
           "imagem": "../imagens/pizza-portuguesa.jpg",
-          "id": 1,
-          "idProdutoCarrinho": 1
+          "descricao": "Massa, molho de tomate, queijo, frange e catupiry.",
+          "valor": 60,
+          "id": 2,
+          "idProdutoCarrinho": 2
+        },
+        {
+          "nome": "Frango c/ Catupiry",
+          "imagem": "../imagens/pizza-portuguesa.jpg",
+          "descricao": "Massa, molho de tomate, queijo, frange e catupiry.",
+          "valor": 60,
+          "id": 2,
+          "idProdutoCarrinho": 3
+        },
+        {
+          "nome": "Peperoni",
+          "imagem": "../imagens/pizza-portuguesa.jpg",
+          "descricao": "Massa, molho de tomate, queijo, peperoni.",
+          "valor": "40",
+          "id": 3,
+          "idProdutoCarrinho": 4
         }
       ],
-      "valorTotal": 50,
-      "quantidade": 1,
+      "valorTotal": 160,
+      "quantidade": 3,
       "id": 1
     }
   ],
