@@ -4,43 +4,53 @@
       "nome": "Calabresa",
       "valor": 50,
       "descricao": "Massa, molho de tomate, queijo, calabresa e cebola.",
-      "imagem": "../imagens/pizza-portuguesa.jpg",
+      "imagem": "../imagens/pizza-calabres.jpg",
       "id": 1
     },
     {
       "nome": "Frango c/ Catupiry",
-      "imagem": "../imagens/pizza-portuguesa.jpg",
+      "imagem": "../imagens/pizza-de-frango-com-catupiry.jpg",
       "descricao": "Massa, molho de tomate, queijo, frange e catupiry.",
       "valor": 60,
       "id": 2
     },
     {
       "nome": "Peperoni",
-      "imagem": "../imagens/pizza-portuguesa.jpg",
+      "imagem": "../imagens/pizza-peperoni.jpeg",
       "descricao": "Massa, molho de tomate, queijo, peperoni.",
       "valor": "40",
       "id": 3
-    },
-    {
-      "nome": "Peperoni",
-      "imagem": "../imagens/pizza-portuguesa.jpg",
-      "descricao": "Massa, molho de tomate, queijo, peperoni.",
-      "valor": "40",
-      "id": 4
     },
     {
       "nome": "Mussarela",
       "imagem": "../imagens/pizza-portuguesa.jpg",
       "descricao": "Massa, molho de tomate, queijo.",
       "valor": "45",
-      "id": 5
+      "id": 4
     }
   ],
   "Carrinho": [
     {
-      "produtos": [],
-      "valorTotal": 0,
-      "quantidade": 0,
+      "produtos": [
+        {
+          "nome": "Calabresa",
+          "valor": 50,
+          "descricao": "Massa, molho de tomate, queijo, calabresa e cebola.",
+          "imagem": "../imagens/pizza-calabres.jpg",
+          "id": 1,
+          "idProdutoCarrinho": 1
+        },
+        {
+          "nome": "Frango c/ Catupiry",
+          "imagem": "../imagens/pizza-de-frango-com-catupiry.jpg",
+          "descricao": "Massa, molho de tomate, queijo, frange e catupiry.",
+          "valor": 60,
+          "id": 2,
+          "idProdutoCarrinho": 2
+        }
+      ],
+      "valorTotal": 110,
+      "quantidade": 2,
       "id": 1
     }
   ],
@@ -170,6 +180,18 @@
       "valorPagamento": 50,
       "formaPagamento": "",
       "id": 21
+    },
+    {
+      "idCarrinho": 1,
+      "valorPagamento": 40,
+      "formaPagamento": "Credito",
+      "id": 22
+    },
+    {
+      "idCarrinho": 1,
+      "valorPagamento": 110,
+      "formaPagamento": "Credito",
+      "id": 23
     }
   ],
   "Pedido": [
