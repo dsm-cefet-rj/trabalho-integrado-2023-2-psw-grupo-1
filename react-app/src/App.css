@@ -7,9 +7,9 @@
 }
 
 header {
-  background-color: #ff0000;
+  background-color: #724040;
   width: 100%;
-  height: 60px;
+  height: 40px;
   color: white;
   display: flex;
   justify-content: center;
@@ -22,9 +22,9 @@ header h1 {
 }
 
 footer {
-  background-color: #ff0000;
+  background-color: #724040;
   width: 100%;
-  height: 60px;
+  height: 40px;
   position: fixed;
   bottom: 0;
   display: flex;

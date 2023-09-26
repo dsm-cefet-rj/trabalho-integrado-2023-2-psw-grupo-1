@@ -107,6 +107,12 @@
       "valorPagamento": 50,
       "formaPagamento": "",
       "id": 9
+    },
+    {
+      "idCarrinho": 1,
+      "valorPagamento": 50,
+      "formaPagamento": "Pix",
+      "id": 10
     }
   ],
   "Pedido": [
