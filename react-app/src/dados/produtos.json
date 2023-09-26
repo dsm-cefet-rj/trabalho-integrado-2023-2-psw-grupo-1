@@ -75,15 +75,15 @@
     {
       "produtos": [
         {
-          "nome": "Mussarela",
+          "nome": "Calabresa",
+          "valor": 50,
+          "descricao": "Massa, molho de tomate, queijo, calabresa e cebola.",
           "imagem": "../imagens/pizza-portuguesa.jpg",
-          "descricao": "Massa, molho de tomate, queijo.",
-          "valor": "45",
-          "id": 5,
+          "id": 1,
           "idProdutoCarrinho": 1
         }
       ],
-      "valorTotal": 45,
+      "valorTotal": 50,
       "quantidade": 1,
       "id": 1
     }
@@ -196,6 +196,12 @@
       "valorPagamento": 200,
       "formaPagamento": "",
       "id": 18
+    },
+    {
+      "idCarrinho": 1,
+      "valorPagamento": 60,
+      "formaPagamento": "",
+      "id": 19
     }
   ],
   "Pedido": [

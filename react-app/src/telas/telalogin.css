@@ -13,7 +13,7 @@ body {
     top: 50%;
     left: 50%;
     transform: translate(-50%,-50%);
-    padding: 70px;
+    padding: 60px;
     border-radius: 15px;
     color: #fff;
     width: 200px;
@@ -22,11 +22,11 @@ body {
 .header-login {
     color: #ffffff; 
     text-align: center;
-    margin-bottom: 19px;
+    margin-bottom: 18px;
   }
   
 .input {
-    padding: 10px;
+    padding: 9px;
     border: 1px solid #ffffff;
     border-radius: 3px;
     outline: none;
@@ -56,12 +56,3 @@ body {
     background-color: #ff0000;
 }
 
-footer {
-    background-color: #724040;
-    width: 100%;  
-    height: 40px;
-    position: fixed;
-    bottom: 0;
-    display: flex;
-    justify-content: center;
-  }
