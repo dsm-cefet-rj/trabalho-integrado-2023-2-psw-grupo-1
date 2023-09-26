@@ -73,9 +73,18 @@
   ],
   "Carrinho": [
     {
-      "produtos": [],
-      "valorTotal": 0,
-      "quantidade": 0,
+      "produtos": [
+        {
+          "nome": "jurupinga",
+          "valor": "600",
+          "descricao": "otima cachaça porem é pizza",
+          "imagem": "../imagens/pizza-portuguesa.jpg",
+          "id": 6,
+          "idProdutoCarrinho": 1
+        }
+      ],
+      "valorTotal": 600,
+      "quantidade": 1,
       "id": 1
     }
   ],
@@ -157,6 +166,30 @@
       "valorPagamento": 50,
       "formaPagamento": "Vale Alimentação",
       "id": 13
+    },
+    {
+      "idCarrinho": 1,
+      "valorPagamento": 135,
+      "formaPagamento": "Débito",
+      "id": 14
+    },
+    {
+      "idCarrinho": 1,
+      "valorPagamento": 650,
+      "formaPagamento": "",
+      "id": 15
+    },
+    {
+      "idCarrinho": 1,
+      "valorPagamento": 820,
+      "formaPagamento": "",
+      "id": 16
+    },
+    {
+      "idCarrinho": 1,
+      "valorPagamento": 0,
+      "formaPagamento": "Débito",
+      "id": 17
     }
   ],
   "Pedido": [

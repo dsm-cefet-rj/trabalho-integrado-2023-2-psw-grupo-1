@@ -112,8 +112,8 @@ const TelaHome = () => {
             <p>Descricao: {produtoPopUp && produtoPopUp.descricao}</p>
             <div>Valor: {produtoPopUp && produtoPopUp.valor}</div>
             <div className="botoes">
-              <button type="button" id={produtoPopUp && produtoPopUp.id} onClick={handleClickConfirmarProduto}>Adicionar ao Carrinho</button>
-              <button type="button" onClick={handleClickCancelarProduto}>Cancelar</button>
+              <button type="button" className="botao1" id={produtoPopUp && produtoPopUp.id} onClick={handleClickConfirmarProduto}>Adicionar ao Carrinho</button>
+              <button type="button" className="botao2" onClick={handleClickCancelarProduto}>Cancelar</button>
             </div>
           </div>
         </div>
