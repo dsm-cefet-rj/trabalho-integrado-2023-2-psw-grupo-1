@@ -27,30 +27,27 @@
       "descricao": "Massa, molho de tomate, queijo.",
       "valor": "45",
       "id": 4
+    },
+    {
+      "nome": "Pizza Marguerita",
+      "valor": "35",
+      "descricao": "Ingredientes frescos com tomates, queijo e manjericão.",
+      "imagem": "../imagens/pizza-marguerita.jpeg",
+      "id": 5
+    },
+    {
+      "nome": "Pizza Napolitana",
+      "valor": "40",
+      "descricao": "A Napolitana leva muçarela, fatias de tomate, parmesão e orégano, além do delicioso molho de tomate",
+      "imagem": "../imagens/pizza-napolitana.jpeg",
+      "id": 6
     }
   ],
   "Carrinho": [
     {
-      "produtos": [
-        {
-          "nome": "Calabresa",
-          "valor": 50,
-          "descricao": "Massa, molho de tomate, queijo, calabresa e cebola.",
-          "imagem": "../imagens/pizza-calabres.jpg",
-          "id": 1,
-          "idProdutoCarrinho": 1
-        },
-        {
-          "nome": "Frango c/ Catupiry",
-          "imagem": "../imagens/pizza-de-frango-com-catupiry.jpg",
-          "descricao": "Massa, molho de tomate, queijo, frange e catupiry.",
-          "valor": 60,
-          "id": 2,
-          "idProdutoCarrinho": 2
-        }
-      ],
-      "valorTotal": 110,
-      "quantidade": 2,
+      "produtos": [],
+      "valorTotal": 0,
+      "quantidade": 0,
       "id": 1
     }
   ],
@@ -192,6 +189,12 @@
       "valorPagamento": 110,
       "formaPagamento": "Credito",
       "id": 23
+    },
+    {
+      "idCarrinho": 1,
+      "valorPagamento": 40,
+      "formaPagamento": "Credito",
+      "id": 24
     }
   ],
   "Pedido": [
