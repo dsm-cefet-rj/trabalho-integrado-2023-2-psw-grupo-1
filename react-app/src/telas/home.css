@@ -9,9 +9,9 @@
     margin: 0 auto;
     padding: 100px;
     background-color: rgba(65, 41, 13, 0.65);
-    flex-direction: column;
     border-radius: 20px;
     margin-top: 50px;
+    flex-wrap: wrap;
 }
 
 .produto {

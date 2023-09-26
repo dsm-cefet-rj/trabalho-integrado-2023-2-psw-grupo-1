@@ -73,18 +73,9 @@
   ],
   "Carrinho": [
     {
-      "produtos": [
-        {
-          "nome": "Calabresa",
-          "valor": 50,
-          "descricao": "Massa, molho de tomate, queijo, calabresa e cebola.",
-          "imagem": "../imagens/pizza-portuguesa.jpg",
-          "id": 1,
-          "idProdutoCarrinho": 1
-        }
-      ],
-      "valorTotal": 50,
-      "quantidade": 1,
+      "produtos": [],
+      "valorTotal": 0,
+      "quantidade": 0,
       "id": 1
     }
   ],
@@ -202,6 +193,18 @@
       "valorPagamento": 60,
       "formaPagamento": "",
       "id": 19
+    },
+    {
+      "idCarrinho": 1,
+      "valorPagamento": 50,
+      "formaPagamento": "Débito",
+      "id": 20
+    },
+    {
+      "idCarrinho": 1,
+      "valorPagamento": 50,
+      "formaPagamento": "",
+      "id": 21
     }
   ],
   "Pedido": [
