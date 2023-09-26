@@ -34,65 +34,13 @@
       "descricao": "Massa, molho de tomate, queijo.",
       "valor": "45",
       "id": 5
-    },
-    {
-      "nome": "jurupinga",
-      "valor": "600",
-      "descricao": "otima cachaça porem é pizza",
-      "imagem": "../imagens/pizza-portuguesa.jpg",
-      "id": 6
-    },
-    {
-      "nome": "jurupinga2",
-      "valor": "22",
-      "descricao": "azsdasd",
-      "imagem": "../imagens/pizza-portuguesa.jpg",
-      "id": 7
-    },
-    {
-      "nome": "jurupinga232",
-      "valor": "222",
-      "descricao": "azsdasdasdas as",
-      "imagem": "../imagens/pizza-portuguesa.jpg",
-      "id": 8
-    },
-    {
-      "nome": "jurupinga23211",
-      "valor": "1",
-      "descricao": "azsdasdasdas aaas as",
-      "imagem": "../imagens/pizza-portuguesa.jpg",
-      "id": 9
-    },
-    {
-      "nome": "aaaaa",
-      "valor": "11",
-      "descricao": "azsdasdasdas aaas as",
-      "imagem": "../imagens/pizza-portuguesa.jpg",
-      "id": 10
     }
   ],
   "Carrinho": [
     {
-      "produtos": [
-        {
-          "nome": "Peperoni",
-          "imagem": "../imagens/pizza-portuguesa.jpg",
-          "descricao": "Massa, molho de tomate, queijo, peperoni.",
-          "valor": "40",
-          "id": 4,
-          "idProdutoCarrinho": 1
-        },
-        {
-          "nome": "Peperoni",
-          "imagem": "../imagens/pizza-portuguesa.jpg",
-          "descricao": "Massa, molho de tomate, queijo, peperoni.",
-          "valor": "40",
-          "id": 3,
-          "idProdutoCarrinho": 2
-        }
-      ],
-      "valorTotal": 80,
-      "quantidade": 2,
+      "produtos": [],
+      "valorTotal": 0,
+      "quantidade": 0,
       "id": 1
     }
   ],
