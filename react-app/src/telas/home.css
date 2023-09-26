@@ -1,15 +1,15 @@
 .produtos-container {
     display: flex;
-    justify-content: flex;
+    justify-content: center;
     gap: 30px;
     align-items: center;
-    width: 100px;
-    height: flex;
-    overflow-x: auto;
+    width: auto;
+    height: 300px;
+    /*overflow-x: auto;*/
     margin: 0 auto;
     padding: 100px;
-    background-color: rgb(10, 94, 10);
-    flex-direction: column;
+    background-color: rgba(65, 41, 13, 0.65);
+    flex-direction: row;
     border-radius: 20px;
 }
 

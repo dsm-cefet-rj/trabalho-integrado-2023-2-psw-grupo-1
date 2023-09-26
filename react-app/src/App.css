@@ -1,11 +1,11 @@
-* {
+/** {
   margin: 0;
   padding: 0;
   color: Black;
   font-style: normal;
   text-decoration: none;
 }
-
+*/
 header {
   background-color: #724040;
   width: 100%;
@@ -23,7 +23,7 @@ header h1 {
 
 footer {
   background-color: #724040;
-  width: 100%;
+  width: 100%;  
   height: 40px;
   position: fixed;
   bottom: 0;

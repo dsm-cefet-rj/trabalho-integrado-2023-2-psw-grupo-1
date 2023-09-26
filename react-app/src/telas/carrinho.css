@@ -32,7 +32,7 @@
     flex-direction: column;
     justify-content: center;
     text-align: center;
-    color: white;
+    color: rgb(5, 5, 5);
 }
 
 .imagem-produto {
@@ -53,13 +53,14 @@
     border-radius: 5px;
     cursor: pointer;
     font-size: 16px;
+    
 }
 
 .valor-total {
     /* Estilos específicos para o Valor Total */
     font-size: 20px;
     margin-top: 10px; /* Espaço acima do Valor Total */
-    color: white;
+    color: white    ;
 }
 
 .quantidade {
@@ -77,4 +78,9 @@
     font-size: 14px;
     transition: background-color 0.3s ease;
     transform: translate(30%,10%);
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
 }
+

@@ -34,38 +34,48 @@
       "descricao": "Massa, molho de tomate, queijo.",
       "valor": "45",
       "id": 5
+    },
+    {
+      "nome": "jurupinga",
+      "valor": "600",
+      "descricao": "otima cachaça porem é pizza",
+      "imagem": "../imagens/pizza-portuguesa.jpg",
+      "id": 6
+    },
+    {
+      "nome": "jurupinga2",
+      "valor": "22",
+      "descricao": "azsdasd",
+      "imagem": "../imagens/pizza-portuguesa.jpg",
+      "id": 7
+    },
+    {
+      "nome": "jurupinga232",
+      "valor": "222",
+      "descricao": "azsdasdasdas as",
+      "imagem": "../imagens/pizza-portuguesa.jpg",
+      "id": 8
+    },
+    {
+      "nome": "jurupinga23211",
+      "valor": "1",
+      "descricao": "azsdasdasdas aaas as",
+      "imagem": "../imagens/pizza-portuguesa.jpg",
+      "id": 9
+    },
+    {
+      "nome": "aaaaa",
+      "valor": "11",
+      "descricao": "azsdasdasdas aaas as",
+      "imagem": "../imagens/pizza-portuguesa.jpg",
+      "id": 10
     }
   ],
   "Carrinho": [
     {
-      "produtos": [
-        {
-          "nome": "Frango c/ Catupiry",
-          "imagem": "../imagens/pizza-portuguesa.jpg",
-          "descricao": "Massa, molho de tomate, queijo, frange e catupiry.",
-          "valor": 60,
-          "id": 2,
-          "idProdutoCarrinho": 2
-        },
-        {
-          "nome": "Frango c/ Catupiry",
-          "imagem": "../imagens/pizza-portuguesa.jpg",
-          "descricao": "Massa, molho de tomate, queijo, frange e catupiry.",
-          "valor": 60,
-          "id": 2,
-          "idProdutoCarrinho": 3
-        },
-        {
-          "nome": "Peperoni",
-          "imagem": "../imagens/pizza-portuguesa.jpg",
-          "descricao": "Massa, molho de tomate, queijo, peperoni.",
-          "valor": "40",
-          "id": 3,
-          "idProdutoCarrinho": 4
-        }
-      ],
-      "valorTotal": 160,
-      "quantidade": 3,
+      "produtos": [],
+      "valorTotal": 0,
+      "quantidade": 0,
       "id": 1
     }
   ],
@@ -129,6 +139,24 @@
       "valorPagamento": 50,
       "formaPagamento": "Pix",
       "id": 10
+    },
+    {
+      "idCarrinho": 1,
+      "valorPagamento": 50,
+      "formaPagamento": "Débito",
+      "id": 11
+    },
+    {
+      "idCarrinho": 1,
+      "valorPagamento": 240,
+      "formaPagamento": "Credito",
+      "id": 12
+    },
+    {
+      "idCarrinho": 1,
+      "valorPagamento": 50,
+      "formaPagamento": "Vale Alimentação",
+      "id": 13
     }
   ],
   "Pedido": [
@@ -140,6 +168,14 @@
       "numeroPedido": 0,
       "statusPedido": "Aguardando Confirmação",
       "id": 1
+    },
+    {
+      "localEntrega": "adasdasda",
+      "numeroContato": "91234-5678",
+      "tempoEntrega": 30,
+      "numeroPedido": 96,
+      "statusPedido": "Em Preparo",
+      "id": 3
     }
   ]
 }
