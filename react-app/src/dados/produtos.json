@@ -75,15 +75,15 @@
     {
       "produtos": [
         {
-          "nome": "jurupinga",
-          "valor": "600",
-          "descricao": "otima cachaça porem é pizza",
+          "nome": "Mussarela",
           "imagem": "../imagens/pizza-portuguesa.jpg",
-          "id": 6,
+          "descricao": "Massa, molho de tomate, queijo.",
+          "valor": "45",
+          "id": 5,
           "idProdutoCarrinho": 1
         }
       ],
-      "valorTotal": 600,
+      "valorTotal": 45,
       "quantidade": 1,
       "id": 1
     }
@@ -190,6 +190,12 @@
       "valorPagamento": 0,
       "formaPagamento": "Débito",
       "id": 17
+    },
+    {
+      "idCarrinho": 1,
+      "valorPagamento": 200,
+      "formaPagamento": "",
+      "id": 18
     }
   ],
   "Pedido": [

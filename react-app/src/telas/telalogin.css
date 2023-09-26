@@ -55,3 +55,13 @@ body {
 .button:hover {
     background-color: #ff0000;
 }
+
+footer {
+    background-color: #724040;
+    width: 100%;  
+    height: 40px;
+    position: fixed;
+    bottom: 0;
+    display: flex;
+    justify-content: center;
+  }

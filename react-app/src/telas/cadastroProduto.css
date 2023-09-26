@@ -1,11 +1,17 @@
 .cadastro-container {
-    width: 100%;
     display: flex;
     justify-content: center;
+    gap: 10px;
     align-items: center;
+    width: 300px;
+    overflow-x: auto;
+    margin: 0 auto;
+    padding: 90px;
+    background-color: rgba(247, 246, 245, 0.623);
     flex-direction: column;
-    margin-top: 50px;
-    gap: 20px;
+    flex-wrap: wrap;
+    border-radius: 15px;
+    font-size: 17px;
 }
 
 
@@ -14,8 +20,10 @@
     justify-content: center;
     flex-direction: column;
     align-items: center;
-    border: 1px solid #0c0b0b; /* Adicione a borda aqui */
+    border: 1px solid #e4e0e0; /* Adicione a borda aqui */
     padding: 10px; /* Adicione algum espaço dentro do container */
+    background-color: rgba(255, 255, 255, 0.808);
+    border-radius: 15px;
 }
 
 .form {
@@ -45,9 +53,11 @@ input {
 
 input[type=submit] {
     padding: 5px 10px;
-    background-color: rgb(69, 255, 69);
+    background-color: rgb(255, 0, 0);
     border: none;
     cursor: pointer;
+    transform: translate(70%,50%);
+    font-size: 14px;
 }
 
 input::-webkit-outer-spin-button,
@@ -58,4 +68,7 @@ input::-webkit-inner-spin-button {
 
 input[type=number]{
     -moz-appearance: textfield;
+}
+.campobotao{
+
 }
