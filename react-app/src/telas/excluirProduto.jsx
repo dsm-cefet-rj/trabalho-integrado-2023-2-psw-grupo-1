@@ -12,9 +12,9 @@ const TelaExcluirProduto = () => {
         let produtoId = parseInt(event.currentTarget.id);
 
         fetch(`http://localhost:8000/produtos/${produtoId}`, {
-             "method": "DELETE",
-             "headers": {"Content-type": "application/json;charset=UTF-8"}
-           })
+                "method": "DELETE",
+                "headers": {"Content-type": "application/json;charset=UTF-8"}
+            })
         
         let novoProdutos = produtos.filter(p => p.id !== produtoId)
 
