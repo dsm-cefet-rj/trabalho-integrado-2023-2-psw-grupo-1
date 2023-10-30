@@ -5,6 +5,16 @@ var logger = require('morgan');
 
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
+var produtosRouter = require('./routes/produtos');
+
+const mongoose = require('mongoose');
+
+const url = "mongodb://127.0.0.1:27017/pizzaria-psw";
+const connect = mongoose.connect(url);
+
+connect.then((db) => {
+    console.log("conectou");
+}, (err) => console.log(err));
 
 var app = express();
 
@@ -16,5 +26,6 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
+app.use('/produtos', produtosRouter);
 
 module.exports = app;
