@@ -44,6 +44,23 @@
       "id": 1
     }
   ],
-  "Pagamento": [],
-  "Pedido": []
+  "Pagamento": [
+    {
+      "idCarrinho": 1,
+      "valorPagamento": 50,
+      "formaPagamento": "Credito",
+      "id": 1
+    }
+  ],
+  "Pedido": [
+    {
+      "idProdutoCarrinho": 0,
+      "localEntrega": "",
+      "numeroContato": "91234-5678",
+      "tempoEntrega": 30,
+      "numeroPedido": 0,
+      "statusPedido": "Aguardando Confirmação",
+      "id": 1
+    }
+  ]
 }

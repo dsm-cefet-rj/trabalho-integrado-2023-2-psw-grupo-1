@@ -1,5 +1,6 @@
 const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
+const normalize = (...args) => import('normalize-mongoose').then(({default: fetch}) => fetch(...args));
 
 const produtoSchema = new Schema({
     "nome": {
@@ -19,6 +20,8 @@ const produtoSchema = new Schema({
         required: true
     }
 });
+
+produtoSchema.plugin(normalize)
 
 var Produtos = mongoose.model('Produtos', produtoSchema);
 
