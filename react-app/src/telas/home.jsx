@@ -15,7 +15,7 @@ const TelaHome = () => {
   const  carrinho2  = useSelector(state => state.carrinho)
 
   const handleClickConfirmarProduto = (event) => {
-    let produtoId = parseInt(event.currentTarget.id);
+    let produtoId = (event.currentTarget.id);
 
     let produtoAtual = produtos.filter(p => p.id === produtoId)[0]
 
@@ -58,9 +58,11 @@ const TelaHome = () => {
   }
   
   const handleClickProduto = (event) => {
-    let produtoId = parseInt(event.currentTarget.id);
+    let produtoId = (event.currentTarget.id);
 
-    let produtoAtual = produtos.filter(p => p.id === produtoId)[0]
+    console.log(produtoId);
+
+    let produtoAtual = produtos.filter(p => p.id == produtoId)[0]
 
     setProdutoPopUp(produtoAtual)
 
@@ -69,11 +71,12 @@ const TelaHome = () => {
   }
 
     useEffect(() => {
-      fetch('http://localhost:8000/produtos')
+      fetch('http://localhost:3001/produtos')
        .then(response => response.json())
        .then(json => {
           setProdutos(json)
           dispatch(iniciaProduto(json))
+          console.log(json)
         })
 
       setProdutos(produtos)
@@ -88,21 +91,21 @@ const TelaHome = () => {
        }
      }, [])
 
-    useEffect(() => {
-      if(carrinhoMudou > 0) {
-        fetch('http://localhost:8000/carrinho/1', {
-             "method": "PUT",
-             "body": JSON.stringify(carrinho2),
-             "headers": {"Content-type": "application/json;charset=UTF-8"}
-           })
-      } else {
-        fetch('http://localhost:8000/carrinho', {
-             "method": "POST",
-             "body": JSON.stringify(carrinho2),
-             "headers": {"Content-type": "application/json;charset=UTF-8"}
-           })
-      }
-    }, [carrinhoMudou])
+    // useEffect(() => {
+    //   if(carrinhoMudou > 0) {
+    //     fetch('http://localhost:8000/carrinho/1', {
+    //          "method": "PUT",
+    //          "body": JSON.stringify(carrinho2),
+    //          "headers": {"Content-type": "application/json;charset=UTF-8"}
+    //        })
+    //   } else {
+    //     fetch('http://localhost:8000/carrinho', {
+    //          "method": "POST",
+    //          "body": JSON.stringify(carrinho2),
+    //          "headers": {"Content-type": "application/json;charset=UTF-8"}
+    //        })
+    //   }
+    // }, [carrinhoMudou])
   return (
     <>
       <div className="pop-pup-pizza-container" style={{display: displayPopUp}}>

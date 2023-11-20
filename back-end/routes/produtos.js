@@ -1,9 +1,6 @@
 var express = require('express');
 var router = express.Router();
-var bodyParser = require('body-parser');
 const Produtos = require('../models/produtoSchema');
-
-//router.use(bodyParser);
 
 router.route('/')
 .get((req, res, next) => {

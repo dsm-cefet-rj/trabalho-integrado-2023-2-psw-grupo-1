@@ -12,7 +12,7 @@ const TelaCadastroProduto = () => {
          "descricao": e.target.descricao.value,
          "imagem": "../imagens/pizza-portuguesa.jpg"
        }
-       fetch('http://localhost:8000/produtos', {
+       fetch('http://localhost:3001/produtos', {
          "method": "POST",
          "body": JSON.stringify(dado),
          "headers": {"Content-type": "application/json;charset=UTF-8"}
