@@ -17,12 +17,24 @@ router.route('/')
     Produtos.create(req.body)
     .then((produto) => {
         console.log('produto criado ', produto);
-        res.statusCode = 200;
+        res.statusCode = 201;
         res.setHeader('Content-Type', 'application/json');
         res.json(produto);
     }, (err => next(err)))
     .catch((err) => next(err))
 })
 
+router.route('/:id')
+.delete((req, res, next) => {;
+    console.log(req.params.id)
+    Produtos.deleteOne({"_id": req.params.id})
+    .then((produto) => {
+        console.log('produto excluido ', produto);
+        res.statusCode = 200;
+        res.setHeader('Content-Type', 'application/json');
+        res.json(produto);
+    }, (err => next(err)))
+    .catch((err) => next(err))
+})
 
 module.exports = router;
