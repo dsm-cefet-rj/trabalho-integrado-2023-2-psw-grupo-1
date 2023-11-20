@@ -11,7 +11,7 @@ const TelaExcluirProduto = () => {
     const handleClickConfirmarDelecao = (event)=> {
         let produtoId = parseInt(event.currentTarget.id);
 
-        fetch(`http://localhost:8000/produtos/${produtoId}`, {
+        fetch(`http://localhost:3001/produtos/${produtoId}`, {
                 "method": "DELETE",
                 "headers": {"Content-type": "application/json;charset=UTF-8"}
             })
