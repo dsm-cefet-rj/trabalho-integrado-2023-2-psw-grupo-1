@@ -8,6 +8,7 @@ var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
 var produtosRouter = require('./routes/produtos');
 var carrinhoRouter = require('./routes/carrinho')
+var pagamentoRouter = require('./routes/pagamento')
 
 const mongoose = require('mongoose');
 
@@ -31,6 +32,7 @@ app.use('/', indexRouter);
 app.use('/users', usersRouter);
 app.use('/produtos', produtosRouter);
 app.use('/carrinho', carrinhoRouter);
+app.use('/pagamento', pagamentoRouter);
 
 
 

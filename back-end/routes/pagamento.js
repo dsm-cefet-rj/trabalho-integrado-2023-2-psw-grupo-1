@@ -1,25 +1,25 @@
 var express = require('express');
 var router = express.Router();
-const pagamento = require('../models/carrinhoSchema');
+const pagamento = require('../models/pagamentoSchema');
 
 router.route('/')
 .get((req, res, next) => {
-
     pagamento.find({})
-        .then((carrinhosDoBanco) => {
+        .then((pagamentoBanco) => {
             res.statusCode = 200;
             res.setHeader('Content-Type', 'application/json');
-            res.json(carrinhosDoBanco);
+            res.json(pagamentoBanco);
         })
         .catch((err) => next(err));
 })
+
 .post((req, res, next) => {
     pagamento.create(req.body)
-    .then((carrinho) => {
-        console.log('carrinho criado', carrinho);
+    .then((pagamento) => {
+        console.log('Pagamento criado', pagamento);
         res.statusCode = 201;
         res.setHeader('Content-Type', 'application/json');
-        res.json(carrinho);
+        res.json(pagamento);
     })
     .catch((err) => next(err));
 });
