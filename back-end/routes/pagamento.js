@@ -2,15 +2,16 @@ var express = require('express');
 var router = express.Router();
 const pagamento = require('../models/pagamentoSchema');
 
-router.route('/')
-.get((req, res, next) => {
-    pagamento.find({})
-        .then((pagamentoBanco) => {
-            res.statusCode = 200;
-            res.setHeader('Content-Type', 'application/json');
-            res.json(pagamentoBanco);
-        })
-        .catch((err) => next(err));
+router.route('/:id')
+.get((req, res, next) => {;
+    console.log(req.params.id)
+    pagamento.find({"_id": req.params.id})
+    .then((pagamento) => {
+        res.statusCode = 200;
+        res.setHeader('Content-Type', 'application/json');
+        res.json(pagamento);
+    }, (err => next(err)))
+    .catch((err) => next(err))
 })
 
 .post((req, res, next) => {
