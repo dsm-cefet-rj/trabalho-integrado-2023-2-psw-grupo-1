@@ -4,6 +4,7 @@ import { changeCarrinho } from "../redux/carrinhoSlice";
 import { iniciaProduto } from "../redux/produtosSlice";
 import uniqueId from 'lodash/uniqueId';
 import "./home.css"
+import { json } from "express";
 
 const TelaHome = () => {
   const [produtos, setProdutos] = useState(null)
@@ -33,10 +34,18 @@ const TelaHome = () => {
       "produtos": novoProdutoCarrinho,
       "valorTotal": novoValor,
       "quantidade": novaQuantidade,
-      "id": carrinho2.id != null ? carrinho2.id : 1
     }
 
-    dispatch(changeCarrinho(novoCarrinho))
+      fetch('http://localhost:3001/carrinho', {
+        method: "POST",
+        body: JSON.stringify(novoCarrinho),
+        headers: { "Content-type": "application/json;charset=UTF-8" },
+      })
+       .then(response => response.json())
+       .then(json => {
+          dispatch(changeCarrinho(json))
+        })
+
 
     //O carrinho do usuário vai passar a existir no momento do login, nesse momento seem como premissa que o carrinho já existe
     //fetch('http://localhost:8000/carrinho/1', {
