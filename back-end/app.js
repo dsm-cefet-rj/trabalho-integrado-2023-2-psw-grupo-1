@@ -7,6 +7,7 @@ var cors = require('cors');
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
 var produtosRouter = require('./routes/produtos');
+var carrinhoRouter = require('./routes/carrinho')
 
 const mongoose = require('mongoose');
 
@@ -29,5 +30,8 @@ app.use(cors());
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
 app.use('/produtos', produtosRouter);
+app.use('/carrinho', carrinhoRouter);
+
+
 
 module.exports = app;
