@@ -7,6 +7,8 @@ var cors = require('cors');
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
 var produtosRouter = require('./routes/produtos');
+var carrinhoRouter = require('./routes/carrinho')
+var pagamentoRouter = require('./routes/pagamento')
 var carrinhoRouter = require('./routes/carrinho');
 var pedidoRouter = require('./routes/pedido')
 
@@ -32,6 +34,7 @@ app.use('/', indexRouter);
 app.use('/users', usersRouter);
 app.use('/produtos', produtosRouter);
 app.use('/carrinho', carrinhoRouter);
+app.use('/pagamento', pagamentoRouter);
 app.use('/pedido', pedidoRouter);
 
 
