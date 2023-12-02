@@ -24,3 +24,4 @@ yarn-error.log*
 
 /src/dados
 node_modules
+testee/

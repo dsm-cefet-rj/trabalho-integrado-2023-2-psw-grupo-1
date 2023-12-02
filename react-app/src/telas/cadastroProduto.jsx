@@ -2,7 +2,8 @@ import { useState } from "react";
 import "./cadastroProduto.css"
 
 const TelaCadastroProduto = () => {
-    const [produtoForm, setProdutoForm] = useState(null)
+    const [produtoForm, setProdutoForm] = useState(null);
+    const [image, setImage] = useState(null);
 
     const handleOnSubmit = (e) => {
       e.preventDefault();
@@ -10,12 +11,17 @@ const TelaCadastroProduto = () => {
          "nome": e.target.nome.value,
          "valor": e.target.valor.value,
          "descricao": e.target.descricao.value,
-         "imagem": "../imagens/pizza-portuguesa.jpg"
+         "imagem": "testa"
        }
+
+       let formData = new FormData();
+       formData.append("file", image);
+       formData.append("body", JSON.stringify(dado));
+
        fetch('http://localhost:3001/produtos', {
          "method": "POST",
-         "body": JSON.stringify(dado),
-         "headers": {"Content-type": "application/json;charset=UTF-8"}
+         "body": formData//,
+         //"headers": {"Content-type": "multipart/form-data"}
        })
        .then(response => response.json())
        .then(json => console.log(json))
@@ -25,7 +31,11 @@ const TelaCadastroProduto = () => {
 
     const handleInputChange = (e) => {
       setProdutoForm({[e.target.name]: [e.target.value]})
-      console.log(produtoForm)
+    }
+
+    const handleFileChange = (e) => {
+      console.log(e.target.files[0])
+      setImage(e.target.files[0])
     }
     return (
       <>
@@ -42,7 +52,11 @@ const TelaCadastroProduto = () => {
               </div>
               <div className="campo valor">
                 <label>Valor</label>
-                <input type="number" name="Valor" id="valor" onChange={handleInputChange} required/>
+                <input type="number" name="valor" id="valor" onChange={handleInputChange} required/>
+              </div>
+              <div className="campo valor">
+                <label>Imagem Produto</label>
+                <input type="file" name="file" id="file" onChange={handleFileChange} required/>
               </div>
               <div className="campo botao">
                 <input type="submit" value="Cadastrar" />

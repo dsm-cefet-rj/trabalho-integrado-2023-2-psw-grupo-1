@@ -1,7 +1,25 @@
 var express = require('express');
+var multer = require('multer');
 var router = express.Router();
 const Produtos = require('../models/produtoSchema');
 
+const storage = multer.diskStorage({
+    destination: function(req,file,callback){
+                   const path = `teste2/`;
+         },
+    filename: function(req,file,callback){
+                  callback(null,`${file.originalname}`);
+     }});
+
+const upload = multer({storage: storage})
+
+// upload = multer({
+//     dest: "testee/",
+//     filename: (req, file, callback) => { 
+//         callback(null, file.fieldname + '-' + Date.now());
+//     }
+// }) const
+       
 router.route('/')
 .get((req, res, next) => {
 
@@ -13,19 +31,23 @@ router.route('/')
         }, (err => next(err)))
         .catch((err) => next(err))
 })
-.post((req, res, next) => {
-    Produtos.create(req.body)
+
+router.post('/', upload.single('file'), (req, res, next) => {
+    console.log("testando")
+    console.log(JSON.parse(JSON.stringify(req.body.body)))
+    console.log(req.file);
+    Produtos.create(JSON.parse(req.body.body))
     .then((produto) => {
         console.log('produto criado ', produto);
         res.statusCode = 201;
-        res.setHeader('Content-Type', 'application/json');
+        res.setHeader('Content-Type', 'multipart/form-data');
         res.json(produto);
     }, (err => next(err)))
     .catch((err) => next(err))
 })
 
 router.route('/:id')
-.delete((req, res, next) => {;
+.delete((req, res, next) => {
     console.log(req.params.id)
     Produtos.deleteOne({"_id": req.params.id})
     .then((produto) => {
@@ -38,3 +60,5 @@ router.route('/:id')
 })
 
 module.exports = router;
+
+//cd back-end && yarn start
