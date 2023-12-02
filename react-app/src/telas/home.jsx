@@ -4,7 +4,6 @@ import { changeCarrinho } from "../redux/carrinhoSlice";
 import { iniciaProduto } from "../redux/produtosSlice";
 import uniqueId from 'lodash/uniqueId';
 import "./home.css"
-import { json } from "express";
 
 const TelaHome = () => {
   const [produtos, setProdutos] = useState(null)
