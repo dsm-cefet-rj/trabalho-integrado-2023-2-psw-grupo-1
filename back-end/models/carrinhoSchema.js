@@ -4,7 +4,7 @@ const Schema = mongoose.Schema;
 const normalize = (...args) => import('normalize-mongoose').then(({ default: fetch }) => fetch(...args));
 
 const carrinhoSchema = new Schema({
-    "produto": {
+    "produtos": {
         type: Schema.Types.Array,
         ref: 'Produto', // Referência ao esquema de Produto
         required: true

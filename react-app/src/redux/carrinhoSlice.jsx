@@ -5,8 +5,7 @@ export const carrinhoSlice = createSlice({
     initialState: {
       "produtos": [],
       "valorTotal": 0,
-      "quantidade": 0,
-      "id": 1
+      "quantidade": 0
     },
     reducers:{
         changeCarrinho(state, { payload }) {
@@ -14,7 +13,7 @@ export const carrinhoSlice = createSlice({
                 "produtos": [...state.produtos, payload.produtos],
                 "valorTotal": parseInt(payload.valorTotal),
                 "quantidade": parseInt(state.quantidade) + 1,
-                "id": state.id
+                "id": payload.id
             }
         },
         deleteProdutoCarrinho(state, { payload }) {

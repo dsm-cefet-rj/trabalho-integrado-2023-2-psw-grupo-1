@@ -16,7 +16,6 @@ const TelaHome = () => {
 
   const handleClickConfirmarProduto = (event) => {
     let produtoId = (event.currentTarget.id);
-
     let produtoAtual = produtos.filter(p => p.id === produtoId)[0]
 
     let valorPizza = produtoAtual.valor
@@ -29,11 +28,15 @@ const TelaHome = () => {
       "idProdutoCarrinho": parseInt(uniqueId())
     }
 
+    console.log(novoProdutoCarrinho)
+
     let novoCarrinho = {
-      "produtos": novoProdutoCarrinho,
+      "produtos": [...carrinho2.produtos, produtoAtual],
       "valorTotal": novoValor,
       "quantidade": novaQuantidade,
+      "id": carrinho2.id
     }
+
 
       fetch('http://localhost:3001/carrinho', {
         method: "POST",
@@ -42,6 +45,7 @@ const TelaHome = () => {
       })
        .then(response => response.json())
        .then(json => {
+        console.log(json)
           dispatch(changeCarrinho(json))
         })
 
@@ -90,13 +94,13 @@ const TelaHome = () => {
       setProdutos(produtos)
       dispatch(iniciaProduto(produtos))
 
-       if (carrinho2.quantidade === 0 ) {
-        fetch('http://localhost:8000/carrinho/1', {
-             "method": "PUT",
-             "body": JSON.stringify(carrinho2),
-             "headers": {"Content-type": "application/json;charset=UTF-8"}
-           })
-       }
+      //  if (carrinho2.quantidade === 0 ) {
+      //   fetch('http://localhost:8000/carrinho/1', {
+      //        "method": "PUT",
+      //        "body": JSON.stringify(carrinho2),
+      //        "headers": {"Content-type": "application/json;charset=UTF-8"}
+      //      })
+      //  }
      }, [])
 
     // useEffect(() => {
