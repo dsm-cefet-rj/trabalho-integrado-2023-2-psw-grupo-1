@@ -18,6 +18,10 @@ const produtoSchema = new Schema({
     "imagem": {
         type: String,
         required: true
+    },
+    "idProdutoCarrinho": {
+        type: Number,
+        required: false
     }
 });
 

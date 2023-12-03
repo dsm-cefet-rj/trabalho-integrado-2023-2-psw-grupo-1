@@ -16,50 +16,29 @@ router.route('/')
 .post((req, res, next) => {
     Carrinho.findOne({ "_id": req.body.id })
     .then((carrinho) => {
-        console.log(carrinho);
         if (carrinho != null) {
             Carrinho.findOneAndUpdate({ "_id": req.body.id }, req.body)
-            .then((carrinho) => {
-                console.log('carrinho criado', carrinho);
+            .then((carrinho2) => {
+                console.log('carrinho atualizado !!!!!!!!!!!!!!!!!!!!!!', carrinho2);
                 res.statusCode = 201;
                 res.setHeader('Content-Type', 'application/json');
-                res.json(carrinho);
+                res.json(carrinho2);
             })
         } else {
             Carrinho.create(req.body)
-            .then((carrinho) => {
-                console.log('carrinho criado', carrinho);
+            .then((carrinho3) => {
+                console.log('carrinho criado ??????????????????????????', carrinho3);
                 res.statusCode = 201;
                 res.setHeader('Content-Type', 'application/json');
-                res.json(carrinho);
+                res.json(carrinho3);
             })
         }
     })
-    // let carrinho_atual = Carrinho.find({ "_id": "123" });
-    // console.log(carrinho_atual);
-    // if (carrinho_atual._id) 
-    //     Carrinho.create(req.body)
-    //     .then((carrinho) => {
-    //         console.log('carrinho criado', carrinho);
-    //         res.statusCode = 201;
-    //         res.setHeader('Content-Type', 'application/json');
-    //         res.json(carrinho);
-    //     })
-    //     .catch((err) => next(err));
-    // else 
-    //     Carrinho.findOneAndUpdate({ "_id": req.body.id }, req.body)
-    // .then((carrinho) => {
-    //     console.log('carrinho criado', carrinho);
-    //     res.statusCode = 201;
-    //     res.setHeader('Content-Type', 'application/json');
-    //     res.json(carrinho);
-    // })
-    // .catch((err) => next(err));
 });
 
 router.route('/:id')
 .put((req, res, next) => {
-    Carrinho.findOneAndUpdate({ "_id": req.params.id }, req.body)
+    Carrinho.findOneAndUpdate({ "_id": req.params.id }, req.body, {new: true})
     .then((carrinho) => {
         console.log('carrinho criado', carrinho);
         res.statusCode = 201;
@@ -73,7 +52,7 @@ router.route('/:id')
 .delete((req, res, next) => {
     Carrinho.deleteOne({ "_id": req.params.id })
     .then((carrinho) => {
-        console.log('carrinho excluído', carrinho);
+        console.log('carrinho excluído //////////////////////////', carrinho);
         res.statusCode = 200;
         res.setHeader('Content-Type', 'application/json');
         res.json(carrinho);
