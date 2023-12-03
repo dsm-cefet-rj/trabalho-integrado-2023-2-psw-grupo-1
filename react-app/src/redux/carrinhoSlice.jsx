@@ -21,19 +21,19 @@ export const carrinhoSlice = createSlice({
       "quantidade": 0
     },
     reducers:{
-         changeCarrinho(state, { payload }) {
-            var a = fetch('http://localhost:3001/carrinho', {
-                method: "POST",
-                body: JSON.stringify(payload),
-                headers: { "Content-type": "application/json;charset=UTF-8" },
-              })
-              .then(response => response)
+        //  changeCarrinho(state, { payload }) {
+        //     var a = fetch('http://localhost:3001/carrinho', {
+        //         method: "POST",
+        //         body: JSON.stringify(payload),
+        //         headers: { "Content-type": "application/json;charset=UTF-8" },
+        //       })
+        //       .then(response => response)
 
-              console.log(a.data)
-              console.log(JSON.parse(a))
+        //       console.log(a.data)
+        //       console.log(JSON.parse(a))
 
-              return JSON.parse(a)
-        },
+        //       return JSON.parse(a)
+        // },
         deleteProdutoCarrinho(state, { payload }) {
             let novoCarrinho = { 
                 "produtos": state.produtos.filter(p => p.idProdutoCarrinho != payload.idProdutoCarrinho),
@@ -42,7 +42,13 @@ export const carrinhoSlice = createSlice({
                 "id": payload.id
             }
 
-            fetch(`http://localhost:3001/carrinho/${novoCarrinho.id}`, {
+            console.log(123)
+            console.log(payload)
+            console.log(state)
+            console.log(novoCarrinho)
+            console.log(123)
+
+            fetch(`http://localhost:3001/carrinho/${payload.id}`, {
                 "method": "PUT",
                 "body": JSON.stringify(novoCarrinho),
                 "headers": {"Content-type": "application/json;charset=UTF-8"}

@@ -18,22 +18,21 @@ const TelaCarrinho = () => {
         
       let produtoCarrinhoExcluir = carrinhoSelector.produtos.filter(p => p.idProdutoCarrinho == event.currentTarget.id)[0]
 
-      console.log(produtoCarrinhoExcluir)
-
       let valorProduto = produtoCarrinhoExcluir.valor
 
       let dado = {
         "idProdutoCarrinho": event.currentTarget.id,
-        "valorTotal": valorProduto
+        "valorTotal": valorProduto,
+        "id": carrinhoSelector.id
       }
 
       dispatch(deleteProdutoCarrinho(dado))
 
-      fetch(`http://localhost:3001/carrinho/${carrinhoSelector.id}`, {
-         "method": "PUT",
-         "body": JSON.stringify(carrinhoSelector),
-         "headers": {"Content-type": "application/json;charset=UTF-8"}
-       })
+      // fetch(`http://localhost:3001/carrinho/${carrinhoSelector.id}`, {
+      //    "method": "PUT",
+      //    "body": JSON.stringify(carrinhoSelector),
+      //    "headers": {"Content-type": "application/json;charset=UTF-8"}
+      //  })
     }
 
     return (
