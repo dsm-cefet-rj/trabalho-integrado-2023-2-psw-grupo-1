@@ -27,12 +27,6 @@ const TelaCarrinho = () => {
       }
 
       dispatch(deleteProdutoCarrinho(dado))
-
-      // fetch(`http://localhost:3001/carrinho/${carrinhoSelector.id}`, {
-      //    "method": "PUT",
-      //    "body": JSON.stringify(carrinhoSelector),
-      //    "headers": {"Content-type": "application/json;charset=UTF-8"}
-      //  })
     }
 
     return (

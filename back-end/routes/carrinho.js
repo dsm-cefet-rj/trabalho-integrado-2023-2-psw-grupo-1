@@ -19,7 +19,7 @@ router.route('/')
         if (carrinho != null) {
             Carrinho.findOneAndUpdate({ "_id": req.body.id }, req.body, {new: true})
             .then((carrinho2) => {
-                console.log('carrinho atualizado !!!!!!!!!!!!!!!!!!!!!!', carrinho2);
+                console.log('carrinho atualizado', carrinho2);
                 res.statusCode = 201;
                 res.setHeader('Content-Type', 'application/json');
                 res.json(carrinho2);
@@ -27,7 +27,7 @@ router.route('/')
         } else {
             Carrinho.create(req.body)
             .then((carrinho3) => {
-                console.log('carrinho criado ??????????????????????????', carrinho3);
+                console.log('carrinho criado', carrinho3);
                 res.statusCode = 201;
                 res.setHeader('Content-Type', 'application/json');
                 res.json(carrinho3);
@@ -52,7 +52,7 @@ router.route('/:id')
 .delete((req, res, next) => {
     Carrinho.deleteOne({ "_id": req.params.id })
     .then((carrinho) => {
-        console.log('carrinho excluído //////////////////////////', carrinho);
+        console.log('carrinho excluído', carrinho);
         res.statusCode = 200;
         res.setHeader('Content-Type', 'application/json');
         res.json(carrinho);

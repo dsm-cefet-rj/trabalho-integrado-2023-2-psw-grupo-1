@@ -21,19 +21,6 @@ export const carrinhoSlice = createSlice({
       "quantidade": 0
     },
     reducers:{
-        //  changeCarrinho(state, { payload }) {
-        //     var a = fetch('http://localhost:3001/carrinho', {
-        //         method: "POST",
-        //         body: JSON.stringify(payload),
-        //         headers: { "Content-type": "application/json;charset=UTF-8" },
-        //       })
-        //       .then(response => response)
-
-        //       console.log(a.data)
-        //       console.log(JSON.parse(a))
-
-        //       return JSON.parse(a)
-        // },
         deleteProdutoCarrinho(state, { payload }) {
             let novoCarrinho = { 
                 "produtos": state.produtos.filter(p => p.idProdutoCarrinho != payload.idProdutoCarrinho),
@@ -41,12 +28,6 @@ export const carrinhoSlice = createSlice({
                 "quantidade": parseInt(state.quantidade) - 1,
                 "id": payload.id
             }
-
-            console.log(123)
-            console.log(payload)
-            console.log(state)
-            console.log(novoCarrinho)
-            console.log(123)
 
             fetch(`http://localhost:3001/carrinho/${payload.id}`, {
                 "method": "PUT",
@@ -58,9 +39,7 @@ export const carrinhoSlice = createSlice({
         }
     },
     extraReducers: (builder) => {
-      // Add reducers for additional action types here, and handle loading state as needed
       builder.addCase(fetcha.fulfilled, (state, { payload }) => {
-        // Add user to the state array
         return payload
       })
     },
