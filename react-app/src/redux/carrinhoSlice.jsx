@@ -1,4 +1,17 @@
-import { createSlice } from "@reduxjs/toolkit";
+import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
+
+export const fetcha = createAsyncThunk(
+  'TESTE',
+  async (payload) => {
+    const response = await fetch('http://localhost:3001/carrinho', {
+      method: "POST",
+      body: JSON.stringify(payload),
+      headers: { "Content-type": "application/json;charset=UTF-8" },
+    })
+    .then(res => res.json())
+    return response
+  }
+)
 
 export const carrinhoSlice = createSlice({
     name: "carrinho",
@@ -8,27 +21,43 @@ export const carrinhoSlice = createSlice({
       "quantidade": 0
     },
     reducers:{
-        changeCarrinho(state, { payload }) {
-            return { 
-                "produtos": [...state.produtos, payload.produtos],
-                "valorTotal": parseInt(payload.valorTotal),
-                "quantidade": parseInt(state.quantidade) + 1,
-                "id": payload.id
-            }
+         changeCarrinho(state, { payload }) {
+            var a = fetch('http://localhost:3001/carrinho', {
+                method: "POST",
+                body: JSON.stringify(payload),
+                headers: { "Content-type": "application/json;charset=UTF-8" },
+              })
+              .then(response => response)
+
+              console.log(a.data)
+              console.log(JSON.parse(a))
+
+              return JSON.parse(a)
         },
         deleteProdutoCarrinho(state, { payload }) {
-            console.log("a")
-            console.log(state.valorTotal)
-            console.log(payload.idProdutoCarrinho)
-            console.log("b")
-            return { 
+            let novoCarrinho = { 
                 "produtos": state.produtos.filter(p => p.idProdutoCarrinho != payload.idProdutoCarrinho),
                 "valorTotal": parseInt(state.valorTotal) - parseInt(payload.valorTotal),
                 "quantidade": parseInt(state.quantidade) - 1,
-                "id": state.id
+                "id": payload.id
             }
+
+            fetch(`http://localhost:3001/carrinho/${novoCarrinho.id}`, {
+                "method": "PUT",
+                "body": JSON.stringify(novoCarrinho),
+                "headers": {"Content-type": "application/json;charset=UTF-8"}
+              })
+
+            return novoCarrinho
         }
-    }
+    },
+    extraReducers: (builder) => {
+      // Add reducers for additional action types here, and handle loading state as needed
+      builder.addCase(fetcha.fulfilled, (state, { payload }) => {
+        // Add user to the state array
+        return payload
+      })
+    },
 })
 
 export const { changeCarrinho, deleteProdutoCarrinho } = carrinhoSlice.actions

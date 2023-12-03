@@ -35,13 +35,13 @@ const TelaPagamento = () => {
     dispatch(changePedido(dadoPedido))
     dispatch(changePagamento(dadoPagamento))
 
-    fetch("http://localhost:8000/pagamento", {
+    fetch("http://localhost:3001/pagamento", {
       method: "POST",
       body: JSON.stringify(dadoPagamento),
       headers: { "Content-type": "application/json;charset=UTF-8" },
     })
 
-    fetch("http://localhost:8000/pedido", {
+    fetch("http://localhost:3001/pedido", {
       method: "POST",
       body: JSON.stringify(pedido),
       headers: { "Content-type": "application/json;charset=UTF-8" },

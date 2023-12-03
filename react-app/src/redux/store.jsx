@@ -10,5 +10,6 @@ export default configureStore({
         carrinho: carrinhoSlice.reducer,
         pedido: pedidoSlice.reducer,
         produtos: produtoSlice.reducer
-    }
+    },
+    middleware: (getDefaultMiddleware) => getDefaultMiddleware()
 })

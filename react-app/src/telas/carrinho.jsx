@@ -15,8 +15,10 @@ const TelaCarrinho = () => {
     const handleClickLixeira = (event) => {
       
       console.log(event.currentTarget.id) //Esse ID recebe o idProdutoCarrinho. 
-
+        
       let produtoCarrinhoExcluir = carrinhoSelector.produtos.filter(p => p.idProdutoCarrinho == event.currentTarget.id)[0]
+
+      console.log(produtoCarrinhoExcluir)
 
       let valorProduto = produtoCarrinhoExcluir.valor
 
@@ -27,7 +29,7 @@ const TelaCarrinho = () => {
 
       dispatch(deleteProdutoCarrinho(dado))
 
-      fetch(`http://localhost:3001/carrinho/1`, {
+      fetch(`http://localhost:3001/carrinho/${carrinhoSelector.id}`, {
          "method": "PUT",
          "body": JSON.stringify(carrinhoSelector),
          "headers": {"Content-type": "application/json;charset=UTF-8"}

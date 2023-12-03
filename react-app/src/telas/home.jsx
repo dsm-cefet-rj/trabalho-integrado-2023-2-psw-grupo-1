@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react"
 import { useDispatch, useSelector } from "react-redux";
-import { changeCarrinho } from "../redux/carrinhoSlice";
+import { changeCarrinho, fetcha } from "../redux/carrinhoSlice";
 import { iniciaProduto } from "../redux/produtosSlice";
 import uniqueId from 'lodash/uniqueId';
 import "./home.css"
@@ -14,7 +14,7 @@ const TelaHome = () => {
   const dispatch = useDispatch()
   const  carrinho2  = useSelector(state => state.carrinho)
 
-  const handleClickConfirmarProduto = (event) => {
+  const handleClickConfirmarProduto = async (event) => {
     let produtoId = (event.currentTarget.id);
     let produtoAtual = produtos.filter(p => p.id === produtoId)[0]
 
@@ -28,34 +28,27 @@ const TelaHome = () => {
       "idProdutoCarrinho": parseInt(uniqueId())
     }
 
-    console.log(novoProdutoCarrinho)
-
     let novoCarrinho = {
-      "produtos": [...carrinho2.produtos, produtoAtual],
+      "produtos": [...carrinho2.produtos, novoProdutoCarrinho],
       "valorTotal": novoValor,
       "quantidade": novaQuantidade,
       "id": carrinho2.id
     }
 
+    console.log(novoCarrinho)
 
-      fetch('http://localhost:3001/carrinho', {
-        method: "POST",
-        body: JSON.stringify(novoCarrinho),
-        headers: { "Content-type": "application/json;charset=UTF-8" },
-      })
-       .then(response => response.json())
-       .then(json => {
-        console.log(json)
-          dispatch(changeCarrinho(json))
-        })
+    dispatch(await fetcha(novoCarrinho))
 
-
-    //O carrinho do usuário vai passar a existir no momento do login, nesse momento seem como premissa que o carrinho já existe
-    //fetch('http://localhost:8000/carrinho/1', {
-    //     "method": "PUT",
-    //     "body": JSON.stringify(carrinho2),
-    //     "headers": {"Content-type": "application/json;charset=UTF-8"}
-    //   })
+      // fetch('http://localhost:3001/carrinho', {
+      //   method: "POST",
+      //   body: JSON.stringify(novoCarrinho),
+      //   headers: { "Content-type": "application/json;charset=UTF-8" },
+      // })
+      //  .then(response => response.json())
+      //  .then(json => {
+      //   console.log(json)
+      //     dispatch(changeCarrinho(json))
+      //   })
 
     setDisplayPopUp("none")
     setBlurValue("blur(0px)")

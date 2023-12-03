@@ -39,7 +39,7 @@ const TelaExcluirProduto = () => {
     }
 
     useEffect(() => {
-        fetch('http://localhost:8000/produtos')
+        fetch('http://localhost:3001/produtos')
          .then(response => response.json())
          .then(json => setProdutos(json))
        }, [])
