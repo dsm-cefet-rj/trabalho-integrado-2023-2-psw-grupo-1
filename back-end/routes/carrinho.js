@@ -17,7 +17,7 @@ router.route('/')
     Carrinho.findOne({ "_id": req.body.id })
     .then((carrinho) => {
         if (carrinho != null) {
-            Carrinho.findOneAndUpdate({ "_id": req.body.id }, req.body)
+            Carrinho.findOneAndUpdate({ "_id": req.body.id }, req.body, {new: true})
             .then((carrinho2) => {
                 console.log('carrinho atualizado !!!!!!!!!!!!!!!!!!!!!!', carrinho2);
                 res.statusCode = 201;
