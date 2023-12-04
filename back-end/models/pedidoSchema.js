@@ -4,7 +4,7 @@ const normalize = (...args) => import('normalize-mongoose').then(({default: fetc
 
 const pedidoSchema = new Schema({
     "idCarrinho":{
-        type: Number,
+        type: String,
         required : true
     },
     "numeroContato":{

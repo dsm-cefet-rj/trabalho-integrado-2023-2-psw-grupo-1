@@ -12,9 +12,11 @@ router.route('/:id')
         res.json(pagamento);
     }, (err => next(err)))
     .catch((err) => next(err))
-})
+});
 
+router.route('/')
 .post((req, res, next) => {
+    console.log(req.body)
     pagamento.create(req.body)
     .then((pagamento) => {
         console.log('Pagamento criado', pagamento);

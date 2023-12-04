@@ -4,7 +4,6 @@ const Produtos = require('../models/produtoSchema');
 
 router.route('/')
 .get((req, res, next) => {
-
     Produtos.find({})
         .then((produtosBanco) => {
             res.statusCode = 200;
@@ -16,7 +15,6 @@ router.route('/')
 .post((req, res, next) => {
     Produtos.create(req.body)
     .then((produto) => {
-        console.log('produto criado ', produto);
         res.statusCode = 201;
         res.setHeader('Content-Type', 'application/json');
         res.json(produto);
@@ -29,7 +27,6 @@ router.route('/:id')
     console.log(req.params.id)
     Produtos.deleteOne({"_id": req.params.id})
     .then((produto) => {
-        console.log('produto excluido ', produto);
         res.statusCode = 200;
         res.setHeader('Content-Type', 'application/json');
         res.json(produto);

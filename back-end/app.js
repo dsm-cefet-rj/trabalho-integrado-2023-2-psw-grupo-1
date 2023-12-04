@@ -9,7 +9,6 @@ var usersRouter = require('./routes/users');
 var produtosRouter = require('./routes/produtos');
 var carrinhoRouter = require('./routes/carrinho')
 var pagamentoRouter = require('./routes/pagamento')
-var carrinhoRouter = require('./routes/carrinho');
 var pedidoRouter = require('./routes/pedido')
 
 const mongoose = require('mongoose');

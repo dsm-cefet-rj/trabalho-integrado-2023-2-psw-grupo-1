@@ -19,7 +19,6 @@ const TelaHome = () => {
     let produtoAtual = produtos.filter(p => p.id === produtoId)[0]
 
     let valorPizza = produtoAtual.valor
-    //let novoProdutosCarrinho = carrinho2.produtos != null ? [...carrinho2.produtos, produtoAtual] : [produtoAtual]
     let novoValor = carrinho2.valorTotal != null ? parseInt(carrinho2.valorTotal) + parseInt(valorPizza) : valorPizza
     let novaQuantidade = carrinho2.quantidade != null ? carrinho2.quantidade + 1 : 1
 
@@ -38,17 +37,6 @@ const TelaHome = () => {
     console.log(novoCarrinho)
 
     dispatch(await fetcha(novoCarrinho))
-
-      // fetch('http://localhost:3001/carrinho', {
-      //   method: "POST",
-      //   body: JSON.stringify(novoCarrinho),
-      //   headers: { "Content-type": "application/json;charset=UTF-8" },
-      // })
-      //  .then(response => response.json())
-      //  .then(json => {
-      //   console.log(json)
-      //     dispatch(changeCarrinho(json))
-      //   })
 
     setDisplayPopUp("none")
     setBlurValue("blur(0px)")

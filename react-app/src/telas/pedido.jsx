@@ -9,7 +9,6 @@ const TelaStatusPedido = () => {
     const carrinho = useSelector(state => state.carrinho)
     const [contadorStatus, setContadorStatus] = useState(0)
     const dispatch = useDispatch()
-
     const listaStatus = ["Em Preparo", "Pedido Enviado", "Pedido Entregue"]
     
     const pararMudancaStatus = () => clearTimeout(timerStatus)

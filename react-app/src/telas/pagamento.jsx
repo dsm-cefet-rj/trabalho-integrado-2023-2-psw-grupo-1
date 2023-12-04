@@ -1,9 +1,9 @@
 import { useEffect, useState } from "react";
 import "./pagamento.css"; // Importe o arquivo CSS
 import { useDispatch, useSelector } from "react-redux"
-import { changePagamento } from "../redux/pagamentoSlice";
+import { changePagamento, alteraPagamento } from "../redux/pagamentoSlice";
 import { useNavigate } from "react-router-dom";
-import { changePedido } from "../redux/pedidoSlice";
+import { changePedido, alteraPedido } from "../redux/pedidoSlice";
 
 const TelaPagamento = () => {
   const [endereco, setEndereco] = useState(null);
@@ -29,23 +29,12 @@ const TelaPagamento = () => {
 
     let dadoPedido = {
       "idProdutoCarrinho": carrinho2.idProdutoCarrinho,
-      "localEntrega": event.target.endereco.value
+      "localEntrega": event.target.endereco.value,
+      "idCarrinho": idCarrinho
     }
 
-    dispatch(changePedido(dadoPedido))
-    dispatch(changePagamento(dadoPagamento))
-
-    fetch("http://localhost:3001/pagamento", {
-      method: "POST",
-      body: JSON.stringify(dadoPagamento),
-      headers: { "Content-type": "application/json;charset=UTF-8" },
-    })
-
-    fetch("http://localhost:3001/pedido", {
-      method: "POST",
-      body: JSON.stringify(pedido),
-      headers: { "Content-type": "application/json;charset=UTF-8" },
-    });
+    dispatch(alteraPedido(dadoPedido))
+    dispatch(alteraPagamento(dadoPagamento))
 
       navigate("../pedido")
   };
