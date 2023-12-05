@@ -51,8 +51,8 @@ const TelaExcluirProduto = () => {
           <div className="pop-up-campos">
             <h2>Deseja apagar a pizza: {produtoPopUp && produtoPopUp.nome}?</h2>
             <div className="botoes">
-              <button type="button" id={produtoPopUp && produtoPopUp.id}onClick={handleClickConfirmarDelecao} >Apagar</button>
-              <button type="button" onClick={handleClickCancelar}>Cancelar</button>
+              <button type="button" className="apagar" id={produtoPopUp && produtoPopUp.id}onClick={handleClickConfirmarDelecao} >Apagar</button>
+              <button type="button" className="cancelar"  onClick={handleClickCancelar}>Cancelar</button>
             </div>
           </div>
         </div>
