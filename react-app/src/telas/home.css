@@ -1,25 +1,37 @@
 .produtos-container {
     display: flex;
     justify-content: center;
-    gap: 10px;
+    gap: 30px;
     align-items: center;
-    width: 410px;
-    flex-wrap: wrap;
+    width: 600px;
+    height: flex;
+    overflow-x: auto;
     margin: 0 auto;
+    padding: 100px;
+    background-color: rgba(65, 41, 13, 0.65);
+    border-radius: 20px;
+    margin-top: 50px;
+    flex-wrap: wrap;
 }
 
 .produto {
-    width: 200px;
-    height: 200px;
+    flex: 0 0 auto;
+    width: 240px;
+    height: 240px;
     display: flex;
     justify-content: center;
     flex-direction: column;
     text-align: center;
     cursor: pointer;
+    border: 1px solid #0c0b0b;
+    padding: 20px;
+    background-color: white;
+    border-radius: 15px;
+    margin-top: -5px;
 }
 
 .imagem-produto {
-    max-width: 200px;
+    max-width: 240px;
 }
 
 .imagem-produto img {
@@ -30,7 +42,7 @@
     display: block;
     width: 100%;
     position: absolute;
-    margin-top: 100px;
+    margin-top: 200px;
     z-index: 2;
     transition: visibility 1s;
 }
@@ -39,11 +51,11 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 100%;
+    width:100%;
 }
 
 .pop-up-campos {
-    background-color: white;
+    background-color: rgb(97, 87, 83);    
     width: 400px;
     box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.438);
     border-radius: 8px;
@@ -51,6 +63,7 @@
 
 .pop-up-campos * {
     margin: 10px;
+    color:white;
 }
 
 .botoes {
@@ -63,4 +76,26 @@
     filter: unset;
     transition: filter 0.2s;
     transition-timing-function: linear;
+}
+
+.botao1{
+    background-color: #FF0000;
+    color: #ffffff;
+    padding: px 8px;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+    
+}
+.botao2{
+    background-color: #FF0000;
+    color: #fff;
+    padding: 3px 8px;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
 }

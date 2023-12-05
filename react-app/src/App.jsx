@@ -35,6 +35,8 @@ function App() {
           <a onClick={() => navigate("/cardapio")}>Cardapio</a>
           <a onClick={handleClickCarrinho}>Carrinho</a>
           <a onClick={handleClickPedido}>Pedido</a>
+          <a onClick={() => navigate("/excluirProduto")}>Excluir Produto</a>
+          <a onClick={() => navigate("/cadastroProduto")}>Cadastra Produto</a>
         </nav>
       </footer>
     </>

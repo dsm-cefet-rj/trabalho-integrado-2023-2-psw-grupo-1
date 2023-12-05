@@ -45,7 +45,7 @@ const TelaPagamento = () => {
 
   return (
     <>
-      <div className="container">
+      
         <div className="retangulo">
           <form onSubmit={handleOnSubmit}>
             <div className="item">
@@ -105,12 +105,13 @@ const TelaPagamento = () => {
                 </label>
               </div>
             </div>
-            <input type="submit" value="Pagar" />
+            <input type="submit" className= "botao" value="Pagar" />
           </form>
         </div>
-      </div>
+      
     </>
   );
 };
 
 export default TelaPagamento;
+

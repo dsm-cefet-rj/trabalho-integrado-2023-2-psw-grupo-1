@@ -1,15 +1,15 @@
-* {
+/** {
   margin: 0;
   padding: 0;
   color: Black;
   font-style: normal;
   text-decoration: none;
 }
-
+*/
 header {
-  background-color: #414141;
+  background-color: #724040;
   width: 100%;
-  height: 60px;
+  height: 40px;
   color: white;
   display: flex;
   justify-content: center;
@@ -22,9 +22,9 @@ header h1 {
 }
 
 footer {
-  background-color: #414141;
-  width: 100%;
-  height: 60px;
+  background-color: #724040;
+  width: 100%;  
+  height: 40px;
   position: fixed;
   bottom: 0;
   display: flex;

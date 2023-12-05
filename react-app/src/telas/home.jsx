@@ -99,34 +99,34 @@ const TelaHome = () => {
     //        })
     //   }
     // }, [carrinhoMudou])
-  return (
-    <>
-      <div className="pop-pup-pizza-container" style={{display: displayPopUp}}>
-        <div className="pop-up-pizza"> 
-          <div className="pop-up-campos">
-            <h2>{produtoPopUp && produtoPopUp.nome}</h2>
-            <p>Descricao: {produtoPopUp && produtoPopUp.descricao}</p>
-            <div>Valor: {produtoPopUp && produtoPopUp.valor}</div>
-            <div className="botoes">
-              <button type="button" id={produtoPopUp && produtoPopUp.id} onClick={handleClickConfirmarProduto}>Adicionar ao Carrinho</button>
-              <button type="button" onClick={handleClickCancelarProduto}>Cancelar</button>
+    return (
+      <>
+        <div className="pop-pup-pizza-container" style={{display: displayPopUp}}>
+          <div className="pop-up-pizza"> 
+            <div className="pop-up-campos">
+              <h2>{produtoPopUp && produtoPopUp.nome}</h2>
+              <p>Descricao: {produtoPopUp && produtoPopUp.descricao}</p>
+              <div>Valor: {produtoPopUp && produtoPopUp.valor}</div>
+              <div className="botoes">
+                <button type="button" className="botao1" id={produtoPopUp && produtoPopUp.id} onClick={handleClickConfirmarProduto}>Adicionar ao Carrinho</button>
+                <button type="button" className="botao2" onClick={handleClickCancelarProduto}>Cancelar</button>
+              </div>
             </div>
           </div>
         </div>
-      </div>
-      <div className={`produtos-container blur`} style={{filter: blurValue}}>
-        {produtos && produtos.map(p => {
-          return<div key={p.id} className="produto" onClick={handleClickProduto} id={p.id}>
-                  <div className="imagem-produto">
-                    <img src={p.imagem} alt="Pizza" />
+        <div className={`produtos-container blur`} style={{filter: blurValue}}>
+          {produtos && produtos.map(p => {
+            return<div key={p.id} className="produto" onClick={handleClickProduto} id={p.id}>
+                    <div className="imagem-produto">
+                      <img src={p.imagem} alt="Pizza" />
+                    </div>
+                    <h2 name="nome">{p.nome}</h2>
+                    <p name="valor">Valor: R${p.valor}</p>
                   </div>
-                  <h2 name="nome">{p.nome}</h2>
-                  <p name="valor">Valor: R${p.valor}</p>
-                </div>
-        })}
-      </div>
-    </>
-  );
-}
-
-export default TelaHome;
+          })}
+        </div>
+      </>
+    );
+  }
+  
+  export default TelaHome;

@@ -9,7 +9,7 @@ const TelaExcluirProduto = () => {
     const [blurValue, setBlurValue] = useState("none")
 
     const handleClickConfirmarDelecao = (event)=> {
-        let produtoId = parseInt(event.currentTarget.id);
+        let produtoId = event.currentTarget.id;
 
         fetch(`http://localhost:3001/produtos/${produtoId}`, {
                 "method": "DELETE",
@@ -29,7 +29,7 @@ const TelaExcluirProduto = () => {
     }
 
     const handleClickExcluirProduto = (event) => {
-        let produtoId = parseInt(event.currentTarget.id);
+        let produtoId = event.currentTarget.id;
 
         let produtoAtual = produtos.filter(p => p.id === produtoId)[0]
     

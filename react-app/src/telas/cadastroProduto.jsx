@@ -44,7 +44,7 @@ const TelaCadastroProduto = () => {
                 <label>Valor</label>
                 <input type="number" name="Valor" id="valor" onChange={handleInputChange} required/>
               </div>
-              <div className="campo botao">
+              <div className="campobotao">
                 <input type="submit" value="Cadastrar" />
               </div>
             </form>
